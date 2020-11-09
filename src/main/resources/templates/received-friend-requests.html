@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Friend Requests</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+    </head>
+    <body>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${receivedFriendRequests.empty}">
+                    <td colspan="2"> There aren't currently any sent requests . </td>
+                </tr>
+                <tr th:each="friendRequest : ${receivedFriendRequests}">
+                    <td><span th:text="${friendRequest.senderId.userName}"> Username </span></td>
+                    <td><span th:text="${friendRequest.statusId.statusName}"> Status </span></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

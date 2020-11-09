@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #bbd1f5, #90bafd);
+}
+
+.my-container {
+    height: 100vh;
+    padding-top: 17%;
+}
+
+.sign-in-form {
+    width: 400px;
+    margin-left: auto;
+    margin-right: 30%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding-top: 20px;
+    position: relative;
+    box-shadow: 0 0 10px 1px  #72727285;
+}
+
+.brand-name {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in-form form {
+    padding: 20px 50px;
+    padding-bottom: 40px;
+}
+
+i {
+    border-bottom: 1px solid #dfe3e7;
+    height: 37.5px;
+    padding: 0 8px;
+    padding-top: 10px;
+}
+
+.username-icon {
+    margin-top: 1px;
+}
+
+.password-icon {
+    margin-top: 0px;
+}
+
+.form-control {
+    border: 0;
+    border-bottom: 1px solid #dfe3e7;
+    border-radius: 0;
+}
+
+.username-field {
+    margin-bottom: 30px;
+}
+
+.login-button {
+    margin-top: 20px;
+    border-radius: 0;
+    background-color: #79c3ff;
+    border: 0;
+}
+
+.shadow-images-div {
+    animation-name: shadow-animation;
+    animation-duration: 3s;
+}
+
+@keyframes shadow-animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.man-image {
+    height: 550px;
+}
+
+.shadow-image-for-man {
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    top: 345px;
+    left: -160px;
+    z-index: 1;
+}
+
+.man-image-div {
+    position: absolute;
+    height: 550px;
+    top: -170px;
+    left: -180px;
+    z-index: 2;
+    animation-name: man-animation;
+    animation-duration: 2s;
+}
+
+@keyframes man-animation {
+    from {top: -900px;}
+    to {top: -170px;}
+  }
+
+.cat-image {
+    height: 200px;
+}
+
+.cat-image-div {
+    position: absolute;
+    height: 200px;
+    top: -75px;
+    left: 100px;
+    z-index: -1;
+    animation-name: cat-animation;
+    animation-duration: 2s;
+}
+
+@keyframes cat-animation {
+    from {top:30px;}
+    to {top: -75px;}
+}
+
+.turtle-image {
+    height: 150px;
+}
+
+.shadow-image-for-turtle {
+    position: absolute;
+    height: 50px;
+    width: 160px;
+    top: 289px;
+    left: 445px;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.turtle-image-div {
+    position: absolute;
+    height: 150px;
+    top: 180px;
+    left: 420px;
+    z-index: 3;
+    animation-name: turtle-animation;
+    animation-duration: 2s;
+} 
+
+@keyframes turtle-animation {
+    from {left: 900px;}
+    to {left: 420px;}
+}
+
+.dog-image {
+    position: absolute;
+    height: 250px;
+}
+
+.shadow-image-for-dog {
+    position: absolute;
+    height: 40px;
+    width: 200px;
+    top: 360px;
+    left: -345px;
+    z-index: 1;
+}
+
+.dog-image-div {
+    position: absolute;
+    height: 250px;
+    top: 140px;
+    left: -440px;
+    z-index: 3;
+    animation-name: dog-animation;
+    animation-duration: 2s;
+}
+
+@keyframes dog-animation {
+    from {left: -1000px;}
+    to {left: -440px;}
+}
+
+.shadow-image-for-dog-tail {
+    position: absolute;
+    height: 10px;
+    width: 200px;
+    top: 385px;
+    left: -460px;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.forgot-password, .register {
+    color: #2b2e31;
+    font-size: 14px;
+    text-decoration-line: underline;
+}
+
+.forgot-password:hover, .register:hover 
+{
+     color:#828586; 
+     text-decoration:none;
+     text-decoration-line: underline; 
+     cursor:pointer;  
+}
+
+.register{
+    float: right;
+    margin-top: 2px;
+}
+
+footer {
+        background-color: rgba(8, 8, 31, 0.589);
+    }
+
+    .footer-copyright {
+      color: white;
+    }
