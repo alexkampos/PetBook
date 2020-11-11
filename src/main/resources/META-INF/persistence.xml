@@ -9,6 +9,7 @@
     <class>com.Project.PetBook.Models.FriendRequestStatus</class>
     <class>com.Project.PetBook.Models.MyUser</class>
     <class>com.Project.PetBook.Models.Role</class>
+    <class>com.Project.PetBook.Models.Friendships</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/petbook?zeroDateTimeBehavior=CONVERT_TO_NULL&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useSSL=false"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

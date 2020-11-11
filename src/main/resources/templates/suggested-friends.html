@@ -40,10 +40,10 @@ and open the template in the editor.
 
                     $.ajax({
                         url: "addFriend/"+e.target.id
-                    }).done(function () {
+                    }).done(function (r) {
                         e.target.innerText="Request sent";
                         e.target.disabled=true;
-         
+                        console.log(r);
                     });
                 });
             });

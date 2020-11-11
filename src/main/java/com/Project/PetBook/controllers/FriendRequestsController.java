@@ -2,9 +2,11 @@ package com.Project.PetBook.controllers;
 
 import com.Project.PetBook.Models.FriendRequest;
 import com.Project.PetBook.Models.FriendRequestStatus;
+import com.Project.PetBook.Models.Friendships;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Services.FriendRequestServiceInterface;
 import com.Project.PetBook.Services.FriendRequestStatusServiceInterface;
+import com.Project.PetBook.Services.FriendshipsServiceInterface;
 import com.Project.PetBook.Services.MyUserServiceInterface;
 import com.Project.PetBook.Utils.UtilMethods;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/requests")
@@ -30,6 +33,9 @@ public class FriendRequestsController {
 
     @Autowired
     private UtilMethods utilMethods;
+
+    @Autowired
+    FriendshipsServiceInterface friendshipsServiceInterface;
 
     @GetMapping("/sent-friend-requests")
     public String sentFriendRequests(ModelMap mm) {
@@ -51,31 +57,48 @@ public class FriendRequestsController {
     }
 
     @GetMapping("/addFriend/{id}")
-    public String friendAddition(@PathVariable int id, ModelMap mm) {
+    @ResponseBody
+    public String friendAddition(@PathVariable int id) {
 
         // Getting Curent Time 
         java.util.Date dt = new java.util.Date();
-//        java.text.SimpleDateFormat sdf
-//                = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        String currentTime = sdf.format(dt);
 
         // Getting Friend Request Status "PENDING" 
         FriendRequestStatus statusId = friendRequestStatusServiceInterface.getFriendRequestStatusByName("PENDING");
 
         //Getting Sender User
         MyUser senderId = utilMethods.getLoggedInUser();
-        
-        
+
         //Getting Receiver User
         MyUser receiverId = myUserServiceInterface.getUserById(id);
-        
-        
+
         FriendRequest friendRequest = new FriendRequest(dt, statusId, senderId, receiverId);
 
         requestInterface.insertFriendRequest(friendRequest);
 
-        mm.addAttribute("message", "Request Sent");
+        return "ola popa";
+    }
 
-        return "home";
+    @GetMapping("requestAccepted/{id}")
+    @ResponseBody
+    public String acceptedRequest(@PathVariable int id) {
+
+        // Getting Curent Time 
+        java.util.Date dt = new java.util.Date();
+
+
+        //Getting receiver
+        MyUser friendOne = utilMethods.getLoggedInUser();
+        
+        //Getting sender User
+        MyUser friendTwo = myUserServiceInterface.getUserById(id);
+      
+        requestInterface.removeFriendRequest(friendTwo, friendOne);
+       
+        Friendships friendships = new Friendships(dt, friendOne, friendTwo);
+       
+        friendshipsServiceInterface.insertFrienship(friendships);
+
+        return "";
     }
 }

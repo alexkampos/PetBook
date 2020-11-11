@@ -1,7 +1,7 @@
-
 package com.Project.PetBook.Services;
 
 import com.Project.PetBook.Models.FriendRequest;
+import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Repos.FriendRequestRepo;
 import com.Project.PetBook.Utils.UtilMethods;
 import java.util.List;
@@ -13,26 +13,29 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
 
     @Autowired
     private FriendRequestRepo requestRepo;
-    
+
     @Autowired
     private UtilMethods utilMethods;
-    
+
     @Override
     public List<FriendRequest> getSentFriendRequests() {
         return requestRepo.findBySenderId(utilMethods.getLoggedInUser());
     }
 
     @Override
-    public List<FriendRequest> getReceivedFriendRequests() {             
-        return requestRepo.findByReceiverId(utilMethods.getLoggedInUser());        
+    public List<FriendRequest> getReceivedFriendRequests() {
+        return requestRepo.findByReceiverId(utilMethods.getLoggedInUser());
     }
 
     @Override
     public void insertFriendRequest(FriendRequest fr) {
-       requestRepo.save(fr);
+        requestRepo.save(fr);
     }
 
-
-    
+    @Override
+    public void removeFriendRequest(MyUser senderId, MyUser receiverId) {
+        
+        requestRepo.delete(requestRepo.findBySenderIdAndReceiverId(senderId, receiverId));
+    }
 
 }

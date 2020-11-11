@@ -7,4 +7,5 @@ public interface FriendRequestStatusServiceInterface  {
     
     public FriendRequestStatus getFriendRequestStatusByName(String statusName);
     
+    
 }

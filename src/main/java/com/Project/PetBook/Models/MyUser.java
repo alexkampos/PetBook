@@ -27,6 +27,11 @@ import javax.xml.bind.annotation.XmlTransient;
 
 public class MyUser implements Serializable {
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendOne", fetch = FetchType.LAZY)
+    private Collection<Friendships> friendshipsCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendTwo", fetch = FetchType.LAZY)
+    private Collection<Friendships> friendshipsCollection1;
+
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -165,6 +170,24 @@ public class MyUser implements Serializable {
     @Override
     public String toString() {
         return "com.Project.PetBook.Models.Users[ userId=" + userId + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Friendships> getFriendshipsCollection() {
+        return friendshipsCollection;
+    }
+
+    public void setFriendshipsCollection(Collection<Friendships> friendshipsCollection) {
+        this.friendshipsCollection = friendshipsCollection;
+    }
+
+    @XmlTransient
+    public Collection<Friendships> getFriendshipsCollection1() {
+        return friendshipsCollection1;
+    }
+
+    public void setFriendshipsCollection1(Collection<Friendships> friendshipsCollection1) {
+        this.friendshipsCollection1 = friendshipsCollection1;
     }
 
 }
