@@ -26,7 +26,13 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
     public List<FriendRequest> getReceivedFriendRequests() {             
         return requestRepo.findByReceiverId(utilMethods.getLoggedInUser());        
     }
-    
+
+    @Override
+    public void insertFriendRequest(FriendRequest fr) {
+       requestRepo.save(fr);
+    }
+
+
     
 
 }

@@ -61,4 +61,9 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
         return myUserRepo.findByUserName(userName);
     }
 
+    @Override
+    public MyUser getUserById(int id) {
+       return myUserRepo.getOne(id);
+    }
+
 }

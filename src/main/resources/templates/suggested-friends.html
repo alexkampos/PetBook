@@ -37,8 +37,9 @@ and open the template in the editor.
         <script>
             $(document).ready(function () {
                 $("button[name = 'userId']").on('click', function (e) {
+
                     $.ajax({
-                        url: "addFriend?id="+e.target.id,
+                        url: "addFriend/"+e.target.id
                     }).done(function () {
                         e.target.innerText="Request sent";
                         e.target.disabled=true;

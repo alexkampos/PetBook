@@ -10,4 +10,6 @@ public interface FriendRequestServiceInterface {
     
     public List<FriendRequest> getReceivedFriendRequests();
     
+    public void insertFriendRequest(FriendRequest friendRequest);
+    
 }

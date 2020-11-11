@@ -12,4 +12,6 @@ public interface MyUserServiceInterface extends UserDetailsService {
        public List<MyUser> getSuggestedFriends();
        
        public MyUser getUserByUsername(String userName);
+       
+       public MyUser getUserById(int id);
 }

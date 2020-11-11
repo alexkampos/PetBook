@@ -1,4 +1,3 @@
-
 package com.Project.PetBook.Models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -7,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,33 +22,41 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class FriendRequest implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @Basic(optional = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "friend_request_id")
     private Integer friendRequestId;
-    
+
     @Basic(optional = false)
     @Column(name = "datetime_sent")
     @Temporal(TemporalType.TIMESTAMP)
     private Date datetimeSent;
-    
+
     @JoinColumn(name = "status_id", referencedColumnName = "status_id")
     @ManyToOne(optional = false)
     @JsonManagedReference
     private FriendRequestStatus statusId;
-    
+
     @JoinColumn(name = "sender_id", referencedColumnName = "user_id")
     @ManyToOne(optional = false)
     @JsonManagedReference
     private MyUser senderId;
-    
+
     @JoinColumn(name = "receiver_id", referencedColumnName = "user_id")
     @ManyToOne(optional = false)
     @JsonManagedReference
     private MyUser receiverId;
 
     public FriendRequest() {
+    }
+
+    public FriendRequest(Date datetimeSent, FriendRequestStatus statusId, MyUser senderId, MyUser receiverId) {
+        this.datetimeSent = datetimeSent;
+        this.statusId = statusId;
+        this.senderId = senderId;
+        this.receiverId = receiverId;
     }
 
     public FriendRequest(Integer friendRequestId) {
@@ -123,5 +132,5 @@ public class FriendRequest implements Serializable {
     public String toString() {
         return "com.Project.PetBook.Models.FriendRequest[ friendRequestId=" + friendRequestId + " ]";
     }
-    
+
 }

@@ -17,6 +17,7 @@ and open the template in the editor.
                 <tr>
                     <th scope="col">Username</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,8 +25,9 @@ and open the template in the editor.
                     <td colspan="2"> There aren't currently any sent requests . </td>
                 </tr>
                 <tr th:each="friendRequest : ${receivedFriendRequests}">
-                    <td><span th:text="${friendRequest.senderId.userName}"> Username </span></td>
-                    <td><span th:text="${friendRequest.statusId.statusName}"> Status </span></td>
+                    <td><span th:text="${friendRequest.senderId.userName}">  </span></td>
+                    <td><span th:text="${friendRequest.statusId.statusName}">  </span></td>
+                    
                 </tr>
             </tbody>
         </table>
