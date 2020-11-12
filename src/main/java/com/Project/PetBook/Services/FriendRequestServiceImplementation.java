@@ -1,6 +1,8 @@
 package com.Project.PetBook.Services;
 
 import com.Project.PetBook.Models.FriendRequest;
+import com.Project.PetBook.Models.FriendRequestStatus;
+import com.Project.PetBook.Models.Friendships;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Repos.FriendRequestRepo;
 import com.Project.PetBook.Utils.UtilMethods;
@@ -16,6 +18,18 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
 
     @Autowired
     private UtilMethods utilMethods;
+
+    @Autowired
+    private FriendRequestServiceInterface requestInterface;
+
+    @Autowired
+    private MyUserServiceInterface myUserServiceInterface;
+
+    @Autowired
+    private FriendRequestStatusServiceInterface friendRequestStatusServiceInterface;
+
+    @Autowired
+    private FriendshipsServiceInterface friendshipsServiceInterface;
 
     @Override
     public List<FriendRequest> getSentFriendRequests() {
@@ -34,8 +48,70 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
 
     @Override
     public void removeFriendRequest(MyUser senderId, MyUser receiverId) {
-        
+
         requestRepo.delete(requestRepo.findBySenderIdAndReceiverId(senderId, receiverId));
+    }
+
+    @Override
+    public void requestSend(int id) {
+
+        // Getting Curent Time 
+        java.util.Date dt = new java.util.Date();
+
+        // Getting Friend Request Status "PENDING" 
+        FriendRequestStatus statusId = friendRequestStatusServiceInterface.getFriendRequestStatusByName("PENDING");
+
+        //Getting Sender User
+        MyUser senderId = utilMethods.getLoggedInUser();
+
+        //Getting Receiver User
+        MyUser receiverId = myUserServiceInterface.getUserById(id);
+
+        FriendRequest friendRequest = new FriendRequest(dt, statusId, senderId, receiverId);
+
+        requestInterface.insertFriendRequest(friendRequest);
+    }
+
+    @Override
+    public void requestAccepted(int id) {
+
+        // Getting Curent Time 
+        java.util.Date dt = new java.util.Date();
+
+        //Getting receiver
+        MyUser friendOne = utilMethods.getLoggedInUser();
+
+        //Getting sender User
+        MyUser friendTwo = myUserServiceInterface.getUserById(id);
+
+        requestInterface.removeFriendRequest(friendTwo, friendOne);
+
+        Friendships friendships = new Friendships(dt, friendOne, friendTwo);
+
+        friendshipsServiceInterface.insertFrienship(friendships);
+
+    }
+
+    @Override
+    public void requestRejected(int id) {
+
+        // Getting Curent Time 
+        java.util.Date dt = new java.util.Date();
+
+        //Getting receiver
+        MyUser friendOne = utilMethods.getLoggedInUser();
+
+        //Getting sender User
+        MyUser friendTwo = myUserServiceInterface.getUserById(id);
+
+        requestInterface.removeFriendRequest(friendTwo, friendOne);
+
+        // Getting Friend Request Status "REJECTED" 
+        FriendRequestStatus statusId = friendRequestStatusServiceInterface.getFriendRequestStatusByName("REJECTED");
+
+        FriendRequest friendRequest = new FriendRequest(dt, statusId, friendTwo, friendOne);
+
+        requestInterface.insertFriendRequest(friendRequest);
     }
 
 }

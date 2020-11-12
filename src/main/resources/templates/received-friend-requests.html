@@ -31,25 +31,37 @@ and open the template in the editor.
                 <tr th:each="friendRequest : ${receivedFriendRequests}">
                     <td><span th:text="${friendRequest.senderId.userName}">  </span></td>
                     <td><span th:text="${friendRequest.statusId.statusName}">  </span></td>
-                    <td><button name="accept" th:id="${friendRequest.senderId.userId}">Accept</button></td>
-                    <td><button name="decline" th:id="${friendRequest.senderId.userId}">Decline</button></td>
+                    <td th:if="${friendRequest.statusId.statusName== 'PENDING'}"><button name="accept" th:id="${friendRequest.senderId.userId}">Accept</button></td>
+                    <td th:if="${friendRequest.statusId.statusName== 'PENDING'}"><button name="decline" th:id="${friendRequest.senderId.userId}">Decline</button></td>
                 </tr>
             </tbody>
         </table>
         <script>
-              $(document).ready(function (){
-                 $("button[name = 'accept']").on('click', function (e){
-                   $.ajax({
-                      url: "requestAccepted/"+e.target.id
-                   }).done(function (){
-                       e.target.innerText="ACCEPTED";
-                       e.target.disabled=true;
-                   });
-                 });
-              });
+            $(document).ready(function () {
+                $("button[name = 'accept']").on('click', function (e) {
+                    $.ajax({
+                        url: "requestAccepted/" + e.target.id
+                    }).done(function () {
+                        e.target.innerText = "ACCEPTED";
+                        e.target.disabled = true;
+                         location.reload();
+                    });
+                });
+
+                $("button[name = 'decline']").on('click', function (e) {
+                    $.ajax({
+                        url: "requestDeclined/" + e.target.id
+                    }).done(function () {
+                        e.target.innerText = "DECLINED";
+                        e.target.disabled = true;
+                        location.reload();
+                    });
+                });
+
+            });
 
         </script>
-      
+
 
 
     </body>

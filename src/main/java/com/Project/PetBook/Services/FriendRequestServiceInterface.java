@@ -13,5 +13,11 @@ public interface FriendRequestServiceInterface {
     public void insertFriendRequest(FriendRequest friendRequest);
 
     public void removeFriendRequest(MyUser senderId, MyUser receiverId);
+    
+    public void requestSend(int id);
+    
+    public void requestAccepted(int id);
+    
+    public void requestRejected(int id);
 
 }
