@@ -4,13 +4,37 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Home</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div>Hello World</div>
+        <div> <strong>Hello <span th:text="${#authentication.getPrincipal().getUsername()}"> </span></strong></div>
+        <br/>
+        <br/>
+        <h1>Utilities</h1>
+        <hr/>
+
+        <a th:href=@{/requests/suggested-friends}>Suggested Friends</a>
+        (See sugested friends add friend)
+        <br/>
+        <br/>
+
+
+        <a th:href=@{/requests/received-friend-requests}>your RECEIVED Friend Requests</a>
+        (See received friend request accept r decline request)
+        <br/>
+        <br/>
+        
+        
+        <a th:href=@{/requests/sent-friend-requests}>your SENT friend requests</a>
+        (See  sended requests )
+        <br/>
+        <br/>
+
+        <a th:href=@{/requests/friend-list}>Friend List</a>
+        (See your friends )
     </body>
 </html>

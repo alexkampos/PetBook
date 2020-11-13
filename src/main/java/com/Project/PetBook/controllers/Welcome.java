@@ -29,8 +29,18 @@ public class Welcome {
     }
 
     @GetMapping("/")
-    public String home() {
+    public String welcome() {
         return "welcome.html";
+    }
+
+    @PostMapping("/home")
+    public String home() {
+        return "home.html";
+    }
+
+    @GetMapping("/home")
+    public String gethome() {
+        return "home.html";
     }
 
     @GetMapping("/registerUser")

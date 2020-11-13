@@ -1,8 +1,9 @@
-
 package com.Project.PetBook.Services;
 
+import com.Project.PetBook.Models.Friendships;
 import com.Project.PetBook.Models.Role;
 import com.Project.PetBook.Models.MyUser;
+import com.Project.PetBook.Repos.FriendshipsRepo;
 import com.Project.PetBook.Repos.MyUserRepo;
 import com.Project.PetBook.Utils.UtilMethods;
 import java.util.ArrayList;
@@ -25,7 +26,10 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
 
     @Autowired
     private UtilMethods utilMethods;
-    
+
+    @Autowired
+    FriendshipsServiceInterface friendshipsServiceInterface;
+
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         MyUser myuser = myUserRepo.findByUserName(userName);
@@ -48,12 +52,12 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
 
     @Override
     public void insertUser(MyUser user) {
-      myUserRepo.save(user);
+        myUserRepo.save(user);
     }
 
     @Override
     public List<MyUser> getSuggestedFriends() {
-      return myUserRepo.findSuggestedFriends(utilMethods.getLoggedInUser().getUserId());
+        return myUserRepo.findSuggestedFriends(utilMethods.getLoggedInUser().getUserId());
     }
 
     @Override
@@ -63,7 +67,21 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
 
     @Override
     public MyUser getUserById(int id) {
-       return myUserRepo.getOne(id);
+        return myUserRepo.getOne(id);
+    }
+
+    @Override
+    public List<MyUser> getFriendList() {
+        List<Friendships> friendshipList = friendshipsServiceInterface.getFriendshipList(utilMethods.getLoggedInUser());
+        List<MyUser> friendList = new ArrayList<>();
+        for (Friendships fs : friendshipList) {
+            if (fs.getFriendOne().getUserId() == utilMethods.getLoggedInUser().getUserId()) {
+                friendList.add(fs.getFriendTwo());
+            } else if (fs.getFriendTwo().getUserId() == utilMethods.getLoggedInUser().getUserId()) {
+                friendList.add(fs.getFriendOne());
+            }
+        }
+        return friendList;
     }
 
 }

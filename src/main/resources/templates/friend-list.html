@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>friend List</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div>Hello <span th:text="${#authentication.getPrincipal().getUsername()}"></span></div>
+        <h1>Friend List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th> User Name </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${friendList.empty}">
+                    <td colspan="1"> No Friends Available </td>
+                </tr>
+                <tr th:each="friend : ${friendList}">
+                    <td><span th:text="${friend.userName}"> </span></td>      
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{~/PetBook/home}">home</a>
+    </body>
+</html>
