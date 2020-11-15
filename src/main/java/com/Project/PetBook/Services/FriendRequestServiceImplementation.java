@@ -74,17 +74,27 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
 
     @Override
     public void requestAccepted(int id) {
+        MyUser friendOne;
+        MyUser friendTwo;
 
         // Getting Curent Time 
         java.util.Date dt = new java.util.Date();
 
         //Getting receiver
-        MyUser friendOne = utilMethods.getLoggedInUser();
+        MyUser currentUser = utilMethods.getLoggedInUser();
 
         //Getting sender User
-        MyUser friendTwo = myUserServiceInterface.getUserById(id);
+        MyUser sender = myUserServiceInterface.getUserById(id);
 
-        requestInterface.removeFriendRequest(friendTwo, friendOne);
+        requestInterface.removeFriendRequest(sender, currentUser);
+
+        if (currentUser.getUserId() < sender.getUserId()) {
+            friendOne = currentUser;
+            friendTwo = sender;
+        } else {
+            friendOne = sender;
+            friendTwo = currentUser;
+        }
 
         Friendships friendships = new Friendships(dt, friendOne, friendTwo);
 
