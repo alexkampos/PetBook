@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface MyUserServiceInterface extends UserDetailsService {
     
-       public void insertUser (MyUser user);
+       public MyUser insertUser (MyUser user);
        
        public List<MyUser> getSuggestedFriends();
        
@@ -16,4 +16,6 @@ public interface MyUserServiceInterface extends UserDetailsService {
        public MyUser getUserById(int id);
        
        public List<MyUser> getFriendList();
+       
+        public MyUser register(MyUser myUser);
 }

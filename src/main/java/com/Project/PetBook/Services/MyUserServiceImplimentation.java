@@ -8,6 +8,8 @@ import com.Project.PetBook.Repos.MyUserRepo;
 import com.Project.PetBook.Utils.UtilMethods;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,6 +17,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,7 +31,16 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
     private UtilMethods utilMethods;
 
     @Autowired
-    FriendshipsServiceInterface friendshipsServiceInterface;
+    private FriendshipsServiceInterface friendshipsServiceInterface;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private VerificationTokenServiceImplimentation verificationTokenServiceImplimentation;
+    
+    @Autowired
+    EmailService emailService;
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
@@ -37,7 +49,15 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
 
             throw new UsernameNotFoundException("User name not found");
         }
-        User springSecurityUser = new User(myuser.getUserName(), myuser.getUserPassword(), mapRolesToAuthorities((List) myuser.getRoles()));
+        
+        boolean enabled = !myuser.isEnabled();
+        UserDetails springSecurityUser = User.withUsername(myuser.getUserName())
+                .password( myuser.getUserPassword())
+                .disabled(enabled)
+                .authorities( mapRolesToAuthorities((List) myuser.getRoles()))
+                .build();
+        
+//        User springSecurityUser = new User(myuser.getUserName(), myuser.getUserPassword(), mapRolesToAuthorities((List) myuser.getRoles()));
         return springSecurityUser;
     }
 
@@ -51,8 +71,8 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
     }
 
     @Override
-    public void insertUser(MyUser user) {
-        myUserRepo.save(user);
+    public MyUser insertUser(MyUser user) {
+        return myUserRepo.save(user);
     }
 
     @Override
@@ -82,6 +102,31 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
             }
         }
         return friendList;
+    }
+
+    @Override
+    public MyUser register(MyUser myUser) {
+
+        myUser.setUserPassword(passwordEncoder.encode(myUser.getUserPassword()));
+
+        myUser.setEnabled(false);
+
+        Optional<MyUser> saved = Optional.of(insertUser(myUser));
+
+        saved.ifPresent(u -> {
+
+            try {
+                String token = UUID.randomUUID().toString();
+                verificationTokenServiceImplimentation.save(saved.get(), token);
+                
+                emailService.sendHtmlMail(u);
+
+            } catch (Exception e) {
+
+                e.printStackTrace();
+            }
+        });
+        return insertUser(myUser);
     }
 
 }

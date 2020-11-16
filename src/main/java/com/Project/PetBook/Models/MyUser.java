@@ -51,6 +51,8 @@ public class MyUser implements Serializable {
     @Basic(optional = false)
     @Column(name = "email")
     private String email;
+    
+    private boolean enabled;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userId")
     private ContactInfo contactInfo;
@@ -80,6 +82,16 @@ public class MyUser implements Serializable {
         this.userName = userName;
         this.userPassword = userPassword;
     }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+    
+    
 
     public Integer getUserId() {
         return userId;

@@ -18,5 +18,7 @@ public interface FriendshipsServiceInterface {
     public void insertFrienship(Friendships friendships);
     
     public List<Friendships> getFriendshipList(MyUser currentUser);
+    
+   
 
 }

@@ -105,7 +105,7 @@ i {
 @keyframes man-animation {
     from {top: -900px;}
     to {top: -170px;}
-  }
+}
 
 .cat-image {
     height: 200px;
@@ -202,10 +202,10 @@ i {
 
 .forgot-password:hover, .register:hover 
 {
-     color:#828586; 
-     text-decoration:none;
-     text-decoration-line: underline; 
-     cursor:pointer;  
+    color:#828586; 
+    text-decoration:none;
+    text-decoration-line: underline; 
+    cursor:pointer;  
 }
 
 .register{
@@ -214,9 +214,16 @@ i {
 }
 
 footer {
-        background-color: rgba(8, 8, 31, 0.589);
-    }
+    background-color: rgba(8, 8, 31, 0.589);
+}
 
-    .footer-copyright {
-      color: white;
-    }
+.footer-copyright {
+    color: white;
+}
+
+.msgDisplay{
+    background-color:rgba(0,255,0,0.3);
+    text-align: center;
+    color: green;
+    padding: 20px;
+}
