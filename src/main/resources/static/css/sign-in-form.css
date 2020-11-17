@@ -9,10 +9,10 @@ body{
 
 .my-container {
     height: 100vh;
-    padding-top: 17%;
+    padding-top: 15%;
 }
 
-.sign-in-form {
+.sign-in-form-and-brand {
     width: 400px;
     margin-left: auto;
     margin-right: 30%;
@@ -32,13 +32,18 @@ body{
     justify-content: center;
 }
 
-.sign-in-form form {
+.sign-in-form, .reset-password-form {
     padding: 20px 50px;
     padding-bottom: 40px;
 }
 
+.wrong-username-or-password {
+    padding: 5px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
 i {
-    border-bottom: 1px solid #dfe3e7;
     height: 37.5px;
     padding: 0 8px;
     padding-top: 10px;
@@ -195,6 +200,9 @@ i {
 }
 
 .forgot-password, .register {
+    background: none;
+    border: none;
+    padding: 0;
     color: #2b2e31;
     font-size: 14px;
     text-decoration-line: underline;

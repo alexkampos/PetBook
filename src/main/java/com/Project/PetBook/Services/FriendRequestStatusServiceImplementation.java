@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FriendRequestStatusServiceImplementation implements FriendRequestStatusServiceInterface {
+public class FriendRequestStatusServiceImplementation implements FriendRequestStatusService {
 
     @Autowired
     private FriendRequestStatusRepo statusRepo;

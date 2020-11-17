@@ -34,15 +34,18 @@ and open the template in the editor.
                 </tr>
             </tbody>
         </table>
+        
+        <a th:href="@{~/PetBook/home}">home</a>
         <script>
             $(document).ready(function () {
                 $("button[name = 'userId']").on('click', function (e) {
+
                     $.ajax({
-                        url: "addFriend?id="+e.target.id,
-                    }).done(function () {
+                        url: "addFriend/"+e.target.id
+                    }).done(function (r) {
                         e.target.innerText="Request sent";
                         e.target.disabled=true;
-         
+                        console.log(r);
                     });
                 });
             });

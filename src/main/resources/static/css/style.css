@@ -2,10 +2,11 @@
 body{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,116,0.6870098381149334) 35%, rgba(0,212,255,1) 100%);
+
 }
 
 .mybody{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -17,15 +18,13 @@ body{
     padding: 10px;
 }
 .myform{
-
-    position: fixed;
-    padding: 60px;
-    padding-top: 30px;
-    width: 500px;
-    height: auto;
-    top: 50%;
+    position: absolute;
+    padding: 40px;
+    padding-top: 10px;
+    width:30%;
+   
     left: 50%;
-    margin-top: -200px; /* Negative half of height. */
+
     margin-left: -250px;
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
@@ -37,25 +36,11 @@ body{
 }
 
 .cat{
-    margin-bottom: 500px;
 
-}
-.dog{
-
-    z-index: 3;
-    padding-left: 320px;
-    padding-right: 0px;
     margin-top: 390px;
-
+    padding-left: 100px;
 }
-.dog1{
 
-
-    padding-left:160px;
-    margin-top: 180px;
-    margin-left: 100px;
-
-}
 
 .stamp{
     z-index: 4;
@@ -84,4 +69,34 @@ i{
 
 .noborder{
     border: 0;
+}
+input:invalid {
+    border-bottom: 2px dashed rgb(255, 228, 228);
+}
+
+input:invalid:required {
+
+}
+#usernameError{
+    color: red;
+    margin-left: 50px;
+}
+
+#emailerror{
+    color: red;
+    margin-left: 50px;
+}
+
+#passworderror{
+    color: red;
+    margin-left: 50px;
+}
+
+#passworderror2{
+    color: red;
+    margin-left: 50px;
+}
+
+#showpass{
+    opacity: 0.3;
 }

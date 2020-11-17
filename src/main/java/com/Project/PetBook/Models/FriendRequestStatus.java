@@ -75,26 +75,6 @@ public class FriendRequestStatus implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (statusId != null ? statusId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FriendRequestStatus)) {
-            return false;
-        }
-        FriendRequestStatus other = (FriendRequestStatus) object;
-        if ((this.statusId == null && other.statusId != null) || (this.statusId != null && !this.statusId.equals(other.statusId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "com.Project.PetBook.Models.FriendRequestStatus[ statusId=" + statusId + " ]";
     }

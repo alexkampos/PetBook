@@ -20,14 +20,15 @@ and open the template in the editor.
                 </tr>
             </thead>
             <tbody>
-                <tr th:if="${receivedFriendRequests.empty}">
+                <tr th:if="${sentFriendRequests.empty}">
                     <td colspan="2"> There aren't currently any sent requests . </td>
                 </tr>
-                <tr th:each="friendRequest : ${receivedFriendRequests}">
-                    <td><span th:text="${friendRequest.senderId.userName}"> Username </span></td>
+                <tr th:each="friendRequest : ${sentFriendRequests}">
+                    <td><span th:text="${friendRequest.receiverId.userName}"> Username </span></td>
                     <td><span th:text="${friendRequest.statusId.statusName}"> Status </span></td>
                 </tr>
             </tbody>
         </table>
+        <a th:href="@{~/PetBook/home}">home</a>
     </body>
 </html>

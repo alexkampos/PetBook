@@ -83,26 +83,6 @@ public class ContactInfo implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (ciId != null ? ciId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ContactInfo)) {
-            return false;
-        }
-        ContactInfo other = (ContactInfo) object;
-        if ((this.ciId == null && other.ciId != null) || (this.ciId != null && !this.ciId.equals(other.ciId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "com.Project.PetBook.Models.ContactInfo[ ciId=" + ciId + " ]";
     }
