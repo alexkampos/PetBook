@@ -108,3 +108,8 @@ input:invalid:required {
 form > p{
     color: black;
 }
+
+.invalid-feedback{
+    color:red;
+
+}

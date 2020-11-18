@@ -90,6 +90,10 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
         return myUserRepo.getOne(id);
     }
 
+    
+    
+    
+    
     @Override
     public List<MyUser> getFriendList() {
         List<Friendships> friendshipList = friendshipsServiceInterface.getFriendshipList(utilMethods.getLoggedInUser());
@@ -104,6 +108,10 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
         return friendList;
     }
 
+    
+    
+    
+    
     @Override
     public MyUser register(MyUser myUser) {
 
@@ -122,7 +130,6 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
                 emailService.sendHtmlMail(u);
 
             } catch (Exception e) {
-                System.out.println("AAAAA");
                 e.printStackTrace();
             }
         });

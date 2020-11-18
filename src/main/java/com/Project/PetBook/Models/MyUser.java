@@ -1,4 +1,3 @@
-
 package com.Project.PetBook.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -27,11 +26,6 @@ import javax.xml.bind.annotation.XmlTransient;
 
 public class MyUser implements Serializable {
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendOne", fetch = FetchType.LAZY)
-    private Collection<Friendships> friendshipsCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendTwo", fetch = FetchType.LAZY)
-    private Collection<Friendships> friendshipsCollection1;
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -39,6 +33,7 @@ public class MyUser implements Serializable {
     @Basic(optional = false)
     @Column(name = "user_id")
     private Integer userId;
+
 
     @Basic(optional = false)
     @Column(name = "user_name")
@@ -51,7 +46,7 @@ public class MyUser implements Serializable {
     @Basic(optional = false)
     @Column(name = "email")
     private String email;
-    
+
     private boolean enabled;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userId")
@@ -59,7 +54,7 @@ public class MyUser implements Serializable {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
-             inverseJoinColumns = @JoinColumn(name = "role_id"))
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> Roles;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "senderId", fetch = FetchType.LAZY)
@@ -69,6 +64,11 @@ public class MyUser implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "receiverId", fetch = FetchType.LAZY)
     @JsonBackReference
     private Collection<FriendRequest> friendRequestCollection1;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendOne", fetch = FetchType.LAZY)
+    private Collection<Friendships> friendshipsCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendTwo", fetch = FetchType.LAZY)
+    private Collection<Friendships> friendshipsCollection1;
 
     public MyUser() {
     }
@@ -90,8 +90,6 @@ public class MyUser implements Serializable {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-    
-    
 
     public Integer getUserId() {
         return userId;
