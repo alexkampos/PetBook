@@ -1,16 +1,8 @@
 package com.Project.PetBook.controllers;
 
-import com.Project.PetBook.Models.FriendRequest;
-import com.Project.PetBook.Models.FriendRequestStatus;
-import com.Project.PetBook.Models.Friendships;
-import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Services.FriendRequestServiceInterface;
-import com.Project.PetBook.Services.FriendRequestStatusServiceInterface;
-import com.Project.PetBook.Services.FriendshipsServiceInterface;
 import com.Project.PetBook.Services.MyUserServiceInterface;
-import com.Project.PetBook.Utils.UtilMethods;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,8 +39,8 @@ public class FriendRequestsController {
         return "suggested-friends.html";
     }
 
-    @GetMapping("/addFriend/{id}")
     @ResponseBody
+    @GetMapping("/addFriend/{id}")
     public String friendAddition(@PathVariable int id) {
 
         requestInterface.requestSend(id);
@@ -56,8 +48,8 @@ public class FriendRequestsController {
         return "";
     }
 
-    @GetMapping("requestAccepted/{id}")
     @ResponseBody
+    @GetMapping("requestAccepted/{id}")
     public String acceptedRequest(@PathVariable int id) {
 
         requestInterface.requestAccepted(id);
@@ -65,8 +57,8 @@ public class FriendRequestsController {
         return "";
     }
 
-    @GetMapping("requestDeclined/{id}")
     @ResponseBody
+    @GetMapping("requestDeclined/{id}")
     public String requestDeclined(@PathVariable int id) {
 
         requestInterface.requestRejected(id);
@@ -79,6 +71,5 @@ public class FriendRequestsController {
 
         mm.addAttribute("friendList", myUserServiceInterface.getFriendList());
         return "friend-list.html";
-
     }
 }

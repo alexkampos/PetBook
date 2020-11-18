@@ -20,9 +20,6 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
     private UtilMethods utilMethods;
 
     @Autowired
-    private FriendRequestServiceInterface requestInterface;
-
-    @Autowired
     private MyUserServiceInterface myUserServiceInterface;
 
     @Autowired
@@ -69,7 +66,7 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
 
         FriendRequest friendRequest = new FriendRequest(dt, statusId, senderId, receiverId);
 
-        requestInterface.insertFriendRequest(friendRequest);
+        insertFriendRequest(friendRequest);
     }
 
     @Override
@@ -86,7 +83,7 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
         //Getting sender User
         MyUser sender = myUserServiceInterface.getUserById(id);
 
-        requestInterface.removeFriendRequest(sender, currentUser);
+        removeFriendRequest(sender, currentUser);
 
         if (currentUser.getUserId() < sender.getUserId()) {
             friendOne = currentUser;
@@ -114,14 +111,14 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
         //Getting sender User
         MyUser friendTwo = myUserServiceInterface.getUserById(id);
 
-        requestInterface.removeFriendRequest(friendTwo, friendOne);
+        removeFriendRequest(friendTwo, friendOne);
 
         // Getting Friend Request Status "REJECTED" 
         FriendRequestStatus statusId = friendRequestStatusServiceInterface.getFriendRequestStatusByName("REJECTED");
 
         FriendRequest friendRequest = new FriendRequest(dt, statusId, friendTwo, friendOne);
 
-        requestInterface.insertFriendRequest(friendRequest);
+        insertFriendRequest(friendRequest);
     }
 
 }

@@ -28,7 +28,7 @@ public class EmailService {
    
     public void sendHtmlMail(MyUser myUser) throws javax.mail.MessagingException{
     
-        VerificationToken  verificationToken = verificationTokenServiceImplimentation.findByUser(myUser);
+        VerificationToken  verificationToken = verificationTokenServiceImplimentation.findTokenByUser(myUser);
         //check if the user has the token
         if(verificationToken !=null){
         String token = verificationToken.getToken();

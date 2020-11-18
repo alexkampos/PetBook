@@ -3,9 +3,12 @@ package com.Project.PetBook.Services;
 import com.Project.PetBook.Models.Friendships;
 import com.Project.PetBook.Models.Role;
 import com.Project.PetBook.Models.MyUser;
+import com.Project.PetBook.Models.VerificationToken;
 import com.Project.PetBook.Repos.FriendshipsRepo;
 import com.Project.PetBook.Repos.MyUserRepo;
+import com.Project.PetBook.Repos.RoleRepo;
 import com.Project.PetBook.Utils.UtilMethods;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -37,11 +40,19 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    private VerificationTokenServiceImplimentation verificationTokenServiceImplimentation;
-    
-    @Autowired
-    EmailService emailService;
+    private VerificationTokenInterface tokenInterface;
 
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
+    private RoleRepo roleRepo;
+
+    
+    
+    
+    
+    // // // // Spring Security // // // //
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         MyUser myuser = myUserRepo.findByUserName(userName);
@@ -49,15 +60,14 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
 
             throw new UsernameNotFoundException("User name not found");
         }
-        
+
         boolean enabled = !myuser.isEnabled();
         UserDetails springSecurityUser = User.withUsername(myuser.getUserName())
-                .password( myuser.getUserPassword())
+                .password(myuser.getUserPassword())
                 .disabled(enabled)
-                .authorities( mapRolesToAuthorities((List) myuser.getRoles()))
+                .authorities(mapRolesToAuthorities((List) myuser.getRoles()))
                 .build();
-        
-//        User springSecurityUser = new User(myuser.getUserName(), myuser.getUserPassword(), mapRolesToAuthorities((List) myuser.getRoles()));
+
         return springSecurityUser;
     }
 
@@ -91,11 +101,9 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
     }
 
     
-    
-    
-    
     @Override
     public List<MyUser> getFriendList() {
+        
         List<Friendships> friendshipList = friendshipsServiceInterface.getFriendshipList(utilMethods.getLoggedInUser());
         List<MyUser> friendList = new ArrayList<>();
         for (Friendships fs : friendshipList) {
@@ -107,11 +115,9 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
         }
         return friendList;
     }
+    
+    
 
-    
-    
-    
-    
     @Override
     public MyUser register(MyUser myUser) {
 
@@ -125,8 +131,8 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
 
             try {
                 String token = UUID.randomUUID().toString();
-                verificationTokenServiceImplimentation.save(saved.get(), token);
-                
+                tokenInterface.saveToken(saved.get(), token);
+
                 emailService.sendHtmlMail(u);
 
             } catch (Exception e) {
@@ -134,6 +140,52 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
             }
         });
         return insertUser(myUser);
+    }
+
+    
+    
+    @Override
+    public String verifyUser(VerificationToken verificationToken) {
+        MyUser myUser = verificationToken.getMyUser();
+        if (!myUser.isEnabled()) {
+
+           // // // Get the current timestamp // // //
+            Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
+            if (verificationToken.getExpiryDate().before(currentTimeStamp)) {
+                return "your verification token is expired";
+            } else {
+                // // // Activate Acount // // //
+                myUser.setEnabled(true);
+                
+               //  // // Set Role User // // //
+                Role userRole = roleRepo.findById(1).orElse(null);
+                List<Role> roles = new ArrayList();
+                roles.add(userRole);
+                myUser.setRoles(roles);
+
+               // // // Update User // // //
+                insertUser(myUser);
+
+                return "Your acount is Now Activated";
+
+            }
+        } else {
+            //the user is already activated
+            return "your acount is already acivated";
+        }
+
+    }
+
+    @Override
+    public boolean checkIfUserNameExists(String username) {
+
+        return myUserRepo.findByUserName(username) == null;
+    }
+
+    @Override
+    public boolean checkIfEmailExists(String email) {
+
+        return myUserRepo.findByEmail(email) == null;
     }
 
 }

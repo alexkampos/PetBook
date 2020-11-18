@@ -21,7 +21,6 @@ public class UtilMethods {
 
         String loggedInUserName = SecurityContextHolder.getContext().getAuthentication().getName();
         return myUserServiceInterface.getUserByUsername(loggedInUserName);
-
     }
 
     public MyUser convertDtoUserToMyUser(RegisterDto registerDto) {
