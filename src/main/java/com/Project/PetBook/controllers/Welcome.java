@@ -64,7 +64,6 @@ public class Welcome {
         myUserServiceInterface.register(myUser);
         mm.addAttribute("msg","Confirmation email Has been send to your email!!");
         return "sign-in-form.html";
-
     }
 
     @RequestMapping("/login-error")

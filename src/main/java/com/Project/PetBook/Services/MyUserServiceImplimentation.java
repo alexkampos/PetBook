@@ -122,7 +122,7 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
                 emailService.sendHtmlMail(u);
 
             } catch (Exception e) {
-
+                System.out.println("AAAAA");
                 e.printStackTrace();
             }
         });

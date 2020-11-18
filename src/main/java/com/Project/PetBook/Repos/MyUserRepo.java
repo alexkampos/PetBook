@@ -13,6 +13,8 @@ public interface MyUserRepo extends JpaRepository<MyUser, Integer> {
     public MyUser findByUserName(String userName);
 
     public List<MyUser> findByUserIdNot(int userId);
+    
+    public MyUser findByEmail(String email);
 
     @Query(
             value = "SELECT * \n"

@@ -3,18 +3,21 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               crossorigin="anonymous"/>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../static/css/style.css"/>
+
         <link rel="stylesheet" type="text/css" media="all" href="css/style.css" th:href="@{/css/style.css}"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+
+
 
         <title>Register Form</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
     <body>
         <div class="mybody">
-           
+
             <div class="myform">
                 <div class="register">
                     <img src="images/stamp.png" width="30x">
@@ -24,9 +27,9 @@
                     <!--
                     -->                    <div class="input-group">
                         <i class="fas fa-user username-icon"></i>
-                        <input onkeyup="validcheck()" type="text" name="username" path="userName" th:field="*{userName}" id="username"
+                        <input onkeyup="validcheck(1)" type="text" name="username" path="userName" th:field="*{userName}" id="username"
                                class="form-control" placeholder="Username" aria-label="Username"
-                               aria-describedby="basic-addon1" required minlength="3" />
+                               aria-describedby="basic-addon1" required minlength="3" /><i id="nameCheck" class="fas fa-check" style="color: green" hidden="true"></i>
 
                     </div>
                     <p id="usernameError"></p><!--
@@ -34,23 +37,24 @@
                     -->                    <div class="input-group">
                         <i class="fas fa-envelope"></i>
 
-                        <input onkeyup="validcheck()" type="text" name="email" path="email"  th:field="*{email}" id="email" class="form-control"
-                               placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required />
+                        <input onkeyup="validcheck(2)" type="text" name="email" path="email"  th:field="*{email}" id="email" class="form-control"
+                               placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required /><i id="mailCheck" class="fas fa-check" style="color: green" hidden="true"></i>
+
                     </div><!--
                     -->                    <p id="emailerror"></p><!--
                     
                     -->                    <div class="input-group">
                         <i class="fas fa-key"></i>
-                        <input onkeyup="validcheck()" type="password" th:field="*{userPassword}" id="password"
-                               class="form-control" placeholder="Password" aria-label="Username"
+                        <input onkeyup="validcheck(3)" type="password" th:field="*{userPassword}" id="password"
+                               class="form-control" placeholder="Password" 
                                aria-describedby="basic-addon1" required /><i onclick="showpass()" id="showpass"
                                class="fas fa-eye"></i>
                     </div><!--
                     -->                    <p id="passworderror"></p><!--
                     -->                    <div class="input-group mb-3">
                         <i class="fas fa-lock"></i>
-                        <input onkeyup="validcheck()" type="password" class="form-control" id="password2" 
-                               placeholder="Re-type Password" aria-label="Username" aria-describedby="basic-addon1" required>
+                        <input onkeyup="validcheck(4)" type="password" class="form-control" id="password2" 
+                               placeholder="Re-type Password"  aria-describedby="basic-addon1" required><i id="passCheck" class="fas fa-check" style="color: green" hidden="true"></i>
                     </div><!--
                     -->                    <p id="passworderror2"></p><!--
                     -->                    <div class="input-group mb-3">
@@ -84,6 +88,9 @@
 
 
         <script>
+
+
+
             function onChangeHandler() {
                 var x = document.getElementById("myDIV");
                 if (x.hidden === true) {
@@ -94,75 +101,7 @@
             }
 
 
-            function validcheck() {
-                var letters = /^[a-zA-Z\s]*$/;
-                var username = document.getElementById("username").value
-                let usernameError = "";
-                let displayusernameError = document.getElementById("usernameError")
-                var email = document.getElementById("email").value
-                let emailError = "";
-                let displayemailerror = document.getElementById("emailerror")
-                let password = document.getElementById("password").value
-                let passwordError = "";
-                let displaypassworderror = document.getElementById("passworderror")
-                let password2 = document.getElementById("password2").value
-                let passwordError2 = "";
-                let displaypassworderror2 = document.getElementById("passworderror2")
-                let submitbtn = document.getElementById("submitbtn")
 
-
-
-                if (username.length < 3 || username.length > 20) {
-                    usernameError = "Name must be between 3-20 letters"
-                }
-                if (username === null || username.trim() === "") {
-                    usernameError = "this field cannot be empty"
-                }
-                if (!username.match(letters)) {
-                    usernameError = "this field should only contain letters"
-                }
-
-                displayusernameError.innerText = usernameError
-
-
-                if (email === null || email === "") {
-                    emailError = "this field cannot be empty"
-                } else
-                if (email.length < 4 || username.length > 20 || email.includes(" ")) {
-                    emailError = "invalid email"
-                } else
-
-                if (!email.includes('@')) {
-                    emailError = "invalid email"
-                }
-
-                displayemailerror.innerText = emailError
-
-
-
-                if (password.length < 6) {
-                    passwordError = "password should be  6 or more characters"
-                }
-                if (password === null || password === "") {
-                    passwordError = "this field cannot be empty"
-                }
-                if (password2 !== password) {
-                    passwordError2 = "no matching password please retype"
-                }
-
-                displaypassworderror.innerText = passwordError
-                displaypassworderror2.innerText = passwordError2
-
-                if (usernameError.length == 0 && emailError.length === 0 && passwordError.length == 0
-                        && passwordError2.length == 0) {
-                    submitbtn.removeAttribute("disabled")
-                } else {
-                    submitbtn.setAttribute("disabled", true)
-                }
-
-
-
-            }
             function showpass() {
                 var x = document.getElementById("password");
                 var y = document.getElementById("showpass");
@@ -175,7 +114,18 @@
                 }
             }
 
+
+
+
+
+
+
+
+
         </script>
+
+
+        <script th:src="@{/js/RegistrationFieldsValidations.js}"></script>
     </body>
 </html>
 

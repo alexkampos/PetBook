@@ -22,7 +22,7 @@ body{
     padding: 40px;
     padding-top: 10px;
     width:30%;
-   
+
     left: 50%;
 
     margin-left: -250px;
@@ -78,25 +78,33 @@ input:invalid:required {
 
 }
 #usernameError{
+    font-size: small;
     color: red;
     margin-left: 50px;
 }
 
 #emailerror{
+    font-size: small;
     color: red;
     margin-left: 50px;
 }
 
 #passworderror{
+    font-size: small;
     color: red;
     margin-left: 50px;
 }
 
 #passworderror2{
+    font-size: small;
     color: red;
     margin-left: 50px;
 }
 
 #showpass{
     opacity: 0.3;
+}
+
+form > p{
+    color: black;
 }
