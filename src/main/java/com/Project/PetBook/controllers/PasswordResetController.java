@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.Project.PetBook.Services.MyUserService;
 
 @Controller
-@RequestMapping("/reset-password")
+@RequestMapping("reset-password")
 public class PasswordResetController {
     
     @Autowired
@@ -64,7 +64,7 @@ public class PasswordResetController {
         if (result.hasErrors()){
             redirectAttributes.addFlashAttribute(BindingResult.class.getName() + ".passwordResetDto", result);
             redirectAttributes.addFlashAttribute("passwordResetDto", passwordResetDto);
-            return "redirect:/authentication/reset-password?token=" + passwordResetDto.getToken();
+            return "redirect:/reset-password?token=" + passwordResetDto.getToken();
         }
 
         PasswordResetToken token = passwordResetTokenRepo.findByToken(passwordResetDto.getToken());
@@ -73,7 +73,7 @@ public class PasswordResetController {
         myUserServiceInterface.updatePassword(updatedPassword, user.getUserId());
         passwordResetTokenRepo.delete(token);
 
-        return "redirect:/authentication/login?resetSuccess";
+        return "redirect:/login?resetSuccess";
     }
     
     

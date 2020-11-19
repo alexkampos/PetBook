@@ -34,13 +34,13 @@ public class Welcome {
         return "home/welcome";
     }
 
-    @PostMapping("/home")
-    public String home() {
+    @GetMapping("/home")
+    public String showHomeFromGet() {
         return "home/home";
     }
-
-    @GetMapping("/home")
-    public String gethome() {
+    
+    @PostMapping("/home")
+    public String showHomeFromPost() {
         return "home/home";
     }
 

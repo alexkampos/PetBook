@@ -1,5 +1,5 @@
 
-package com.Project.PetBook;
+package com.Project.PetBook.security;
 
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +30,7 @@ public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
+                .antMatchers("/oauth2/**").permitAll()
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/user").hasAnyRole("USER")
                 .antMatchers("/vet").hasAnyRole("VET")
@@ -37,10 +38,10 @@ public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .antMatchers("/home").permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .successForwardUrl("/home")
-                .failureUrl("/login-error")
-                .permitAll()
+                    .loginPage("/login")
+                    .successForwardUrl("/home")
+                    .failureUrl("/login-error")
+                    .permitAll()
                 .and()
                 .logout()
                 .permitAll();

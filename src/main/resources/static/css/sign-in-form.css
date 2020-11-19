@@ -37,10 +37,35 @@ body{
     padding-bottom: 40px;
 }
 
-.wrong-username-or-password {
+.wrong-input {
     padding: 5px;
     padding-left: 10px;
     margin-bottom: 10px;
+}
+
+.email-input {
+    margin-bottom: 20px;
+}
+
+.success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-message-text {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 15px;
+}
+
+.success-message-text-important {
+    font-weight: 500;
+}
+
+.success-message-icon {
+    height: 120px;
+    margin-bottom: 20px;
 }
 
 i {

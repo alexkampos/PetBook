@@ -9,10 +9,10 @@ import lombok.*;
 @Setter
 @ToString
 public class RegisterDto {
-
+    
     private String userName;
     private String email;
     private String password;
-    private String password1;
+    private String confirmPassword;
 
 }

@@ -16,8 +16,8 @@ import lombok.ToString;
 @ToString
 public class PasswordForgotDto {
     
-    @Email
-    @NotEmpty
+    @Email(message = "Please enter a valid email address.")
+    @NotEmpty(message = "Please enter your email.")
     String email;
     
 }

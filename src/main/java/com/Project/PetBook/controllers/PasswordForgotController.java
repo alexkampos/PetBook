@@ -7,8 +7,6 @@ import com.Project.PetBook.Models.PasswordResetToken;
 import com.Project.PetBook.Pojos.Mail;
 import com.Project.PetBook.Repos.PasswordResetTokenRepo;
 import com.Project.PetBook.Services.EmailService;
-import java.util.HashMap;
-import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,14 +56,14 @@ public class PasswordForgotController {
         
         MyUser myUser = myUserServiceInterface.getUserByEmail(form.getEmail());
         if (myUser == null){
-            result.rejectValue("email", null, "We could not find an account for that e-mail address.");
+            result.rejectValue("email", null, "We could not find an account associated with that e-mail address.");
             return "authentication/forgot-password";
         }
         
         PasswordResetToken usersPasswordResetToken = passwordResetTokenService.createPasswordResetToken(myUser);
 
         Mail mail = new Mail();
-        mail.setFrom("no-reply@memorynotfound.com");
+        mail.setFrom("PetBook");
         mail.setTo(myUser.getEmail());
         mail.setSubject("Password reset request");
 
@@ -73,7 +71,7 @@ public class PasswordForgotController {
         
         emailService.sendEmail(mail);
 
-        return "redirect:/authentication/forgot-password?success";
+        return "redirect:/forgot-password?success";
         
     }
     
