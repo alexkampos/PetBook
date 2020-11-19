@@ -1,14 +1,15 @@
 package com.Project.PetBook.controllers;
 
 import com.Project.PetBook.Dto.RegisterDto;
+import com.Project.PetBook.Dto.PasswordForgotDto;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Models.VerificationToken;
-import com.Project.PetBook.Services.MyUserServiceInterface;
+import com.Project.PetBook.Services.MyUserService;
 import com.Project.PetBook.Services.VerificationTokenInterface;
-import com.Project.PetBook.Services.VerificationTokenServiceImplimentation;
 import com.Project.PetBook.Utils.UtilMethods;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -23,7 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class Welcome {
 
     @Autowired
-    MyUserServiceInterface myUserServiceInterface;
+    private MyUserService myUserServiceInterface;
 
     @Autowired
     VerificationTokenInterface tokenInterface;
@@ -31,39 +32,41 @@ public class Welcome {
     @Autowired
     UtilMethods myMethods;
 
+    private PasswordEncoder passwordEncoder;
+    
+    @GetMapping("/login")
+    public String login(ModelMap mm) {
+        mm.addAttribute("passwordResetDto", new PasswordForgotDto());
+        return "authentication/sign-in-form";
+    }    
+        
     @GetMapping("/")
     public String welcome() {
-        return "welcome.html";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-
-        return "sign-in-form.html";
-    }
-
-    @PostMapping("/home")
-    public String home() {
-        return "home.html";
+        return "home/welcome";
     }
 
     @GetMapping("/home")
-    public String gethome() {
-        return "home.html";
+    public String showHomeFromGet() {
+        return "home/home";
+    }
+    
+    @PostMapping("/home")
+    public String showHomeFromPost() {
+        return "home/home";
     }
 
     @GetMapping("/registerUser")
     public String showForm(RegisterDto registerDto) {
 
-        return "register.html";
-    }
+        return "registration/register";
+    }    
 
     @PostMapping("/registerUser")
     public String submitForm(@Valid RegisterDto registerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes, ModelMap mm) {
 
        // // // Back end Validation // // // 
         if (bindingResult.hasErrors()) {
-            return "register.html";
+            return "registration/register";
         }
 
        // // // Check if User name or Email already exists // // // 
@@ -77,10 +80,10 @@ public class Welcome {
             mm.addAttribute("msg", "Confirmation email Has been send to your email!!");
 
             
-            return "sign-in-form.html";
+            return "authentication/sign-in-form";
         } else {
             mm.addAttribute("msg", "Something Went Wrong :(");
-            return "sign-in-form.html";
+            return "authentication/sign-in-form";
         }
     }
     
@@ -101,8 +104,7 @@ public class Welcome {
             model.addAttribute("message", message);
         }
 
-        return "sign-in-form.html";
-
+        return "authentication/sign-in-form";
     }
 
     
@@ -110,6 +112,6 @@ public class Welcome {
     @RequestMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
-        return "sign-in-form.html";
+        return "authentication/sign-in-form";
     }
 }

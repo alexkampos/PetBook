@@ -109,26 +109,6 @@ public class FriendRequest implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (friendRequestId != null ? friendRequestId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FriendRequest)) {
-            return false;
-        }
-        FriendRequest other = (FriendRequest) object;
-        if ((this.friendRequestId == null && other.friendRequestId != null) || (this.friendRequestId != null && !this.friendRequestId.equals(other.friendRequestId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "com.Project.PetBook.Models.FriendRequest[ friendRequestId=" + friendRequestId + " ]";
     }

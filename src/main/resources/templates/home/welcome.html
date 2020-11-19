@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Home</title>
@@ -12,6 +7,13 @@ and open the template in the editor.
     </head>
     <body>
         <h1>welcometo petbook</h1>
+        <div> 
+            <strong>Hello 
+<!--                <span sec:authorize="isAuthenticated()">
+                    <span th:text="${#authentication.getPrincipal().getUserName()}"> </span>
+                </span>-->
+            </strong>
+        </div>
         <br/>
         <br/>
         <a th:href=@{login}>login</a>

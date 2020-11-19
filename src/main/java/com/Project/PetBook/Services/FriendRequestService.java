@@ -4,7 +4,7 @@ import com.Project.PetBook.Models.FriendRequest;
 import com.Project.PetBook.Models.MyUser;
 import java.util.List;
 
-public interface FriendRequestServiceInterface {
+public interface FriendRequestService {
 
     public List<FriendRequest> getTheSentFriendRequests();
 
@@ -14,10 +14,10 @@ public interface FriendRequestServiceInterface {
 
     public void removeFriendRequest(MyUser senderId, MyUser receiverId);
     
-    public void requestSend(int id);
+    public void sendRequest(int id);
     
-    public void requestAccepted(int id);
+    public void acceptRequest(int id);
     
-    public void requestRejected(int id);
+    public void rejectRequest(int id);
 
 }

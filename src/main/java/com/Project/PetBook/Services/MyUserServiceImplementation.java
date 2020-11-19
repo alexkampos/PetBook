@@ -1,10 +1,9 @@
 package com.Project.PetBook.Services;
 
-import com.Project.PetBook.Models.Friendships;
+import com.Project.PetBook.Models.Friendship;
 import com.Project.PetBook.Models.Role;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Models.VerificationToken;
-import com.Project.PetBook.Repos.FriendshipsRepo;
 import com.Project.PetBook.Repos.MyUserRepo;
 import com.Project.PetBook.Repos.RoleRepo;
 import com.Project.PetBook.Utils.UtilMethods;
@@ -25,7 +24,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class MyUserServiceImplimentation implements MyUserServiceInterface {
+public class MyUserServiceImplementation implements MyUserService {
 
     @Autowired
     private MyUserRepo myUserRepo;
@@ -34,7 +33,7 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
     private UtilMethods utilMethods;
 
     @Autowired
-    private FriendshipsServiceInterface friendshipsServiceInterface;
+    private FriendshipService friendshipService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -104,15 +103,15 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
     @Override
     public List<MyUser> getFriendList() {
         
-        List<Friendships> friendshipList = friendshipsServiceInterface.getFriendshipList(utilMethods.getLoggedInUser());
+        List<Friendship> friendshipList = friendshipService.getFriendshipList(utilMethods.getLoggedInUser());
         List<MyUser> friendList = new ArrayList<>();
-        for (Friendships fs : friendshipList) {
+        friendshipList.forEach((fs) -> {
             if (fs.getFriendOne().getUserId() == utilMethods.getLoggedInUser().getUserId()) {
                 friendList.add(fs.getFriendTwo());
             } else if (fs.getFriendTwo().getUserId() == utilMethods.getLoggedInUser().getUserId()) {
                 friendList.add(fs.getFriendOne());
             }
-        }
+        });
         return friendList;
     }
     
@@ -191,5 +190,17 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
 
         return myUserRepo.findByEmail(email) == null;
     }
+
+    @Override
+    public MyUser getUserByEmail(String email) {
+        return myUserRepo.findByEmail(email);
+    }
+
+    @Override
+    public void updatePassword(String password, Integer userId) {
+        myUserRepo.updatePassword(password, userId);
+    }
+    
+    
 
 }

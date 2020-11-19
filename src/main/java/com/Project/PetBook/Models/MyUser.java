@@ -59,16 +59,17 @@ public class MyUser implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "senderId", fetch = FetchType.LAZY)
     @JsonBackReference
-    private Collection<FriendRequest> friendSendedRequestsCollection;
+    private Collection<FriendRequest> friendSentRequestsCollection;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "receiverId", fetch = FetchType.LAZY)
     @JsonBackReference
-    private Collection<FriendRequest> friendRequestCollection1;
-
+    private Collection<FriendRequest> friendReceivedRequestsCollection;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendOne", fetch = FetchType.LAZY)
-    private Collection<Friendships> friendshipsCollection;
+    private Collection<Friendship> friendshipsCollectionColumnFriendOne;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendTwo", fetch = FetchType.LAZY)
-    private Collection<Friendships> friendshipsCollection1;
+    private Collection<Friendship> friendshipsCollectionColumnFriendTwo;
 
     public MyUser() {
     }
@@ -140,64 +141,44 @@ public class MyUser implements Serializable {
     }
 
     @XmlTransient
-    public Collection<FriendRequest> getFriendSendedRequestsCollection() {
-        return friendSendedRequestsCollection;
+    public Collection<FriendRequest> getFriendSentRequestsCollection() {
+        return friendSentRequestsCollection;
     }
 
-    public void setFriendSendedRequestsCollection(Collection<FriendRequest> friendSendedRequestsCollection) {
-        this.friendSendedRequestsCollection = friendSendedRequestsCollection;
+    public void setFriendSentRequestsCollection(Collection<FriendRequest> friendSentRequestsCollection) {
+        this.friendSentRequestsCollection = friendSentRequestsCollection;
     }
 
     @XmlTransient
-    public Collection<FriendRequest> getFriendRequestCollection1() {
-        return friendRequestCollection1;
+    public Collection<FriendRequest> getFriendReceivedRequestsCollection() {
+        return friendReceivedRequestsCollection;
     }
 
-    public void setFriendRequestCollection1(Collection<FriendRequest> friendRequestCollection1) {
-        this.friendRequestCollection1 = friendRequestCollection1;
+    public void setFriendReceivedRequestsCollection(Collection<FriendRequest> friendReceivedRequestsCollection) {
+        this.friendReceivedRequestsCollection = friendReceivedRequestsCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (userId != null ? userId.hashCode() : 0);
-        return hash;
+    @XmlTransient
+    public Collection<Friendship> getFriendshipsCollectionColumnFriendOne() {
+        return friendshipsCollectionColumnFriendOne;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof MyUser)) {
-            return false;
-        }
-        MyUser other = (MyUser) object;
-        if ((this.userId == null && other.userId != null) || (this.userId != null && !this.userId.equals(other.userId))) {
-            return false;
-        }
-        return true;
+    public void setFriendshipsCollectionColumnFriendOne(Collection<Friendship> friendshipsCollectionColumnFriendOne) {
+        this.friendshipsCollectionColumnFriendOne = friendshipsCollectionColumnFriendOne;
     }
 
+    @XmlTransient
+    public Collection<Friendship> getFriendshipsCollectionColumnFriendTwo() {
+        return friendshipsCollectionColumnFriendTwo;
+    }
+
+    public void setFriendshipsCollectionColumnFriendTwo(Collection<Friendship> friendshipsCollectionColumnFriendTwo) {
+        this.friendshipsCollectionColumnFriendTwo = friendshipsCollectionColumnFriendTwo;
+    }
+    
     @Override
     public String toString() {
         return "com.Project.PetBook.Models.Users[ userId=" + userId + " ]";
-    }
-
-    @XmlTransient
-    public Collection<Friendships> getFriendshipsCollection() {
-        return friendshipsCollection;
-    }
-
-    public void setFriendshipsCollection(Collection<Friendships> friendshipsCollection) {
-        this.friendshipsCollection = friendshipsCollection;
-    }
-
-    @XmlTransient
-    public Collection<Friendships> getFriendshipsCollection1() {
-        return friendshipsCollection1;
-    }
-
-    public void setFriendshipsCollection1(Collection<Friendships> friendshipsCollection1) {
-        this.friendshipsCollection1 = friendshipsCollection1;
     }
 
 }

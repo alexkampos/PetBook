@@ -1,7 +1,7 @@
 package com.Project.PetBook.controllers;
 
 import com.Project.PetBook.Repos.MyUserRepo;
-import com.Project.PetBook.Services.MyUserServiceInterface;
+import com.Project.PetBook.Services.MyUserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,20 +15,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AjaxValidationController {
 
     @Autowired
-    MyUserServiceInterface userServiceInterface;
+    MyUserService userService;
 
     @ResponseBody
     @GetMapping("/user-name-validation/{name}")
     public boolean checkIfUserNameExists(@PathVariable String name) {
 
-        return userServiceInterface.checkIfUserNameNotExists(name);
+        return userService.checkIfUserNameNotExists(name);
     }
 
     @ResponseBody
     @GetMapping("/email-validation/{email}")
     public boolean checkIfEmailExists(@PathVariable String email) {
 
-        return userServiceInterface.checkIfEmailNotExists(email);
+        return userService.checkIfEmailNotExists(email);
     }
 
 }

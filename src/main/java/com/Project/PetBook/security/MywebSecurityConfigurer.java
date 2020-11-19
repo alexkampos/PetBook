@@ -1,7 +1,6 @@
 
-package com.Project.PetBook;
+package com.Project.PetBook.security;
 
-import com.Project.PetBook.Services.MyUserServiceInterface;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,12 +14,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import com.Project.PetBook.Services.MyUserService;
 
 @EnableWebSecurity
 public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private MyUserServiceInterface myUserServiceInterface;
+    private MyUserService myUserService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,14 +33,14 @@ public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/user").hasAnyRole("USER")
                 .antMatchers("/vet").hasAnyRole("VET")
-                .antMatchers("/","/activation").permitAll()
+                .antMatchers("/").permitAll()
                 .antMatchers("/home").permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .successForwardUrl("/home")
-                .failureUrl("/login-error")
-                .permitAll()
+                    .loginPage("/login")
+                    .successForwardUrl("/home")
+                    .failureUrl("/login-error")
+                    .permitAll()
                 .and()
                 .logout()
                 .permitAll();
@@ -50,7 +50,7 @@ public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Bean
     public DaoAuthenticationProvider authorivider() {
         DaoAuthenticationProvider daoauth = new DaoAuthenticationProvider();
-        daoauth.setUserDetailsService(myUserServiceInterface);
+        daoauth.setUserDetailsService(myUserService);
         daoauth.setPasswordEncoder(myencoder());
         return daoauth;
     }

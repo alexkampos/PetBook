@@ -2,7 +2,7 @@ package com.Project.PetBook.Services;
 
 import com.Project.PetBook.Models.FriendRequest;
 import com.Project.PetBook.Models.FriendRequestStatus;
-import com.Project.PetBook.Models.Friendships;
+import com.Project.PetBook.Models.Friendship;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Repos.FriendRequestRepo;
 import com.Project.PetBook.Utils.UtilMethods;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FriendRequestServiceImplementation implements FriendRequestServiceInterface {
+public class FriendRequestServiceImplementation implements FriendRequestService {
 
     @Autowired
     private FriendRequestRepo requestRepo;
@@ -20,13 +20,15 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
     private UtilMethods utilMethods;
 
     @Autowired
-    private MyUserServiceInterface myUserServiceInterface;
+    private MyUserService myUserService;
+    
+    private FriendRequestService requestInterface;
 
     @Autowired
-    private FriendRequestStatusServiceInterface friendRequestStatusServiceInterface;
+    private FriendRequestStatusService friendRequestStatusServiceInterface;
 
     @Autowired
-    private FriendshipsServiceInterface friendshipsServiceInterface;
+    private FriendshipService friendshipsServiceInterface;
 
     @Override
     public List<FriendRequest> getTheSentFriendRequests() {
@@ -50,7 +52,7 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
     }
 
     @Override
-    public void requestSend(int id) {
+    public void sendRequest(int id) {
 
         // Getting Curent Time 
         java.util.Date dt = new java.util.Date();
@@ -62,7 +64,7 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
         MyUser senderId = utilMethods.getLoggedInUser();
 
         //Getting Receiver User
-        MyUser receiverId = myUserServiceInterface.getUserById(id);
+        MyUser receiverId = myUserService.getUserById(id);
 
         FriendRequest friendRequest = new FriendRequest(dt, statusId, senderId, receiverId);
 
@@ -70,7 +72,7 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
     }
 
     @Override
-    public void requestAccepted(int id) {
+    public void acceptRequest(int id) {
         MyUser friendOne;
         MyUser friendTwo;
 
@@ -81,7 +83,7 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
         MyUser currentUser = utilMethods.getLoggedInUser();
 
         //Getting sender User
-        MyUser sender = myUserServiceInterface.getUserById(id);
+        MyUser sender = myUserService.getUserById(id);
 
         removeFriendRequest(sender, currentUser);
 
@@ -93,14 +95,14 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
             friendTwo = currentUser;
         }
 
-        Friendships friendships = new Friendships(dt, friendOne, friendTwo);
+        Friendship friendships = new Friendship(dt, friendOne, friendTwo);
 
         friendshipsServiceInterface.insertFrienship(friendships);
 
     }
 
     @Override
-    public void requestRejected(int id) {
+    public void rejectRequest(int id) {
 
         // Getting Curent Time 
         java.util.Date dt = new java.util.Date();
@@ -109,7 +111,7 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
         MyUser friendOne = utilMethods.getLoggedInUser();
 
         //Getting sender User
-        MyUser friendTwo = myUserServiceInterface.getUserById(id);
+        MyUser friendTwo = myUserService.getUserById(id);
 
         removeFriendRequest(friendTwo, friendOne);
 
