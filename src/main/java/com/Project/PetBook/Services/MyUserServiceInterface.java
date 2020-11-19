@@ -21,7 +21,7 @@ public interface MyUserServiceInterface extends UserDetailsService {
     
     public String verifyUser(VerificationToken verificationToken);
     
-    public boolean checkIfUserNameExists(String username);
+    public boolean checkIfUserNameNotExists(String username);
     
-    public boolean checkIfEmailExists(String email);
+    public boolean checkIfEmailNotExists(String email);
 }

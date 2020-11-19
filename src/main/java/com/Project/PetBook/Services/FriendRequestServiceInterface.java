@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface FriendRequestServiceInterface {
 
-    public List<FriendRequest> getSentFriendRequests();
+    public List<FriendRequest> getTheSentFriendRequests();
 
-    public List<FriendRequest> getReceivedFriendRequests();
+    public List<FriendRequest> getTheReceivedFriendRequests();
 
     public void insertFriendRequest(FriendRequest friendRequest);
 

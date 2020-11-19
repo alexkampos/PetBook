@@ -22,14 +22,14 @@ public class FriendRequestsController {
 
     @GetMapping("/sent-friend-requests")
     public String sentFriendRequests(ModelMap mm) {
-        mm.addAttribute("sentFriendRequests", requestInterface.getSentFriendRequests());
+        mm.addAttribute("sentFriendRequests", requestInterface.getTheSentFriendRequests());
 
         return "sent-friend-requests.html";
     }
 
     @GetMapping("/received-friend-requests")
     public String receivedFriendRequests(ModelMap mm) {
-        mm.addAttribute("receivedFriendRequests", requestInterface.getReceivedFriendRequests());
+        mm.addAttribute("receivedFriendRequests", requestInterface.getTheReceivedFriendRequests());
         return "received-friend-requests.html";
     }
 

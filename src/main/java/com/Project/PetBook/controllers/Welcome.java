@@ -66,8 +66,8 @@ public class Welcome {
             return "register.html";
         }
 
-       // // // Check if User name or Email already exusts // // // 
-        if (myUserServiceInterface.checkIfUserNameExists(registerDto.getUserName()) && myUserServiceInterface.checkIfEmailExists(registerDto.getEmail())) {
+       // // // Check if User name or Email already exists // // // 
+        if (myUserServiceInterface.checkIfUserNameNotExists(registerDto.getUserName()) && myUserServiceInterface.checkIfEmailNotExists(registerDto.getEmail())) {
 
             
             MyUser myUser = myMethods.convertDtoUserToMyUser(registerDto);
@@ -91,6 +91,7 @@ public class Welcome {
         VerificationToken verificationToken = tokenInterface.findToken(token);
 
         if (verificationToken == null) {
+            
             model.addAttribute("message", "your verification token is invalid");
             
         } else {

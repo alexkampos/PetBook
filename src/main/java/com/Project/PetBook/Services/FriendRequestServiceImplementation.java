@@ -29,12 +29,12 @@ public class FriendRequestServiceImplementation implements FriendRequestServiceI
     private FriendshipsServiceInterface friendshipsServiceInterface;
 
     @Override
-    public List<FriendRequest> getSentFriendRequests() {
+    public List<FriendRequest> getTheSentFriendRequests() {
         return requestRepo.findBySenderId(utilMethods.getLoggedInUser());
     }
 
     @Override
-    public List<FriendRequest> getReceivedFriendRequests() {
+    public List<FriendRequest> getTheReceivedFriendRequests() {
         return requestRepo.findByReceiverId(utilMethods.getLoggedInUser());
     }
 

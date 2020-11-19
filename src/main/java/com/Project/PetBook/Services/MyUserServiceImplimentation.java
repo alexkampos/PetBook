@@ -167,6 +167,10 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
                 insertUser(myUser);
 
                 return "Your acount is Now Activated";
+                
+                // To DO Remove Token 
+                
+                
 
             }
         } else {
@@ -177,13 +181,13 @@ public class MyUserServiceImplimentation implements MyUserServiceInterface {
     }
 
     @Override
-    public boolean checkIfUserNameExists(String username) {
+    public boolean checkIfUserNameNotExists(String username) {
 
         return myUserRepo.findByUserName(username) == null;
     }
 
     @Override
-    public boolean checkIfEmailExists(String email) {
+    public boolean checkIfEmailNotExists(String email) {
 
         return myUserRepo.findByEmail(email) == null;
     }

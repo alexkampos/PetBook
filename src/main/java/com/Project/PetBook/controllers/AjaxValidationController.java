@@ -21,14 +21,14 @@ public class AjaxValidationController {
     @GetMapping("/user-name-validation/{name}")
     public boolean checkIfUserNameExists(@PathVariable String name) {
 
-        return userServiceInterface.checkIfUserNameExists(name);
+        return userServiceInterface.checkIfUserNameNotExists(name);
     }
 
     @ResponseBody
     @GetMapping("/email-validation/{email}")
     public boolean checkIfEmailExists(@PathVariable String email) {
 
-        return userServiceInterface.checkIfEmailExists(email);
+        return userServiceInterface.checkIfEmailNotExists(email);
     }
 
 }

@@ -1,76 +1,78 @@
 <!DOCTYPE HTML>
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
+        
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               crossorigin="anonymous"/>
         <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"crossorigin="anonymous"></script>
-
         <link rel="stylesheet" type="text/css" media="all" href="css/style.css" th:href="@{/css/style.css}"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-
-
-
-
         <title>Register Form</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+        
     </head>
     <body>
         <div class="mybody">
-
             <div class="myform">
                 <div class="register">
                     <img src="images/stamp.png" width="30x">
                         <h2>Register</h2>
                 </div>
+                
+               
                 <form th:action="@{/registerUser}" th:object="${registerDto}" method="post">
+                    
+                       <!--    // // // // //    USER NAME   // // // // //       -->
                     <div class="input-group">
-
-
                         <i class="fas fa-user username-icon"></i>
                         <input onkeyup="validcheck(1)" type="text" name="username" path="userName" th:field="*{userName}" id="username"
                                class="form-control" placeholder="Username" aria-label="Username"
-                               aria-describedby="basic-addon1"  minlength="3" /><i id="nameCheck" class="fas fa-check" style="color: green" hidden="true"></i>
-
+                               aria-describedby="basic-addon1"  minlength="3" required="true" /><i id="nameCheck" class="fas fa-check" style="color: green" hidden="true"></i>
                     </div>
-                    <p id="usernameError"></p>         
+                    <p id="usernameError" ></p>         
                     <p th:if="${#fields.errors('userName')}" th:errors="*{userName}" class="alert alert-danger wrong-input">Name Error</p>
 
 
+                    <!--    // // // // //   EMAIL  // // // // //       -->
                     <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
                         <div class="input-group" >
                             <i class="fas fa-envelope"></i>
-
                             <input onkeyup="validcheck(2)" type="text" name="email" path="email"  th:field="*{email}" id="email" class="form-control"
-                                   placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"  /><i id="mailCheck" class="fas fa-check" style="color: green" hidden="true"></i>
-
+                                   placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required="true" /><i id="mailCheck" class="fas fa-check" style="color: green" hidden="true"></i>
                         </div>
                         <p class="alert alert-danger wrong-input"
                            th:each="error: ${#fields.errors('email')}"
-                           th:text="${error}">Validation error</p>
+                           th:text="${error}"></p>
                     </div>
-
-<!--                    <div th:if="${#fields.errors('email')}" th:errors="*{'email'}">Email Error</div>-->
-
                     <p id="emailerror"></p>
-
+                    
+                    
+                    <!--    // // // // //   PASSWORD  // // // // //       -->
                     <div class="input-group">
                         <i class="fas fa-key"></i>
                         <input onkeyup="validcheck(3)" type="password" th:field="*{userPassword}" id="password"
-                               class="form-control" placeholder="Password" 
+                               class="form-control" placeholder="Password" required="true"
                                aria-describedby="basic-addon1"  /><i onclick="showpass()" id="showpass"
-                               class="fas fa-eye"></i>
+                               class="fas fa-eye"  ></i>
                     </div>
                     <p th:if="${#fields.errors('userPassword')}" th:errors="*{userPassword}"  class="alert alert-danger wrong-input">pass errors Error</p>
-
                     <p id="passworderror"></p>
+                    
+                    
+                      <!--    // // // // //   PASSWORD 2  // // // // //       -->
                     <div class="input-group mb-3">
                         <i class="fas fa-lock"></i>
                         <input onkeyup="validcheck(4)" type="password" th:field="*{userPassword1}" class="form-control" id="password2" 
-                               placeholder="Re-type Password"  aria-describedby="basic-addon1" ><i id="passCheck" class="fas fa-check" style="color: green" hidden="true"></i>
+                               placeholder="Re-type Password" required="true" aria-describedby="basic-addon1" ><i id="passCheck" class="fas fa-check" style="color: green" hidden="true"></i>
                     </div>     
                     <p th:if="${#fields.errors('userPassword')}" th:errors="*{userPassword}"  class="alert alert-danger wrong-input">pass errors Error</p>
                     <p id="passworderror2"></p>
+                    
+                    
+                    
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <img src="images/vet-dog.png" width="35px">
@@ -89,21 +91,17 @@
                                aria-describedby="basic-addon1">
                     </div>
                     <div class="center">
-                        <button type="submit" id="submitbtn" class=" btn btn-primary" >Submit</button>
+                        <button type="submit" id="submitbtn" class=" btn btn-primary" disabled="true">Submit</button>
                     </div>
                 </form>
             </div>
-            <div class="squirle">
-
-
-            </div>
+            
         </div>
-
-
+        
+        
+        
         <script>
-
-
-
+           
             function onChangeHandler() {
                 var x = document.getElementById("myDIV");
                 if (x.hidden === true) {
@@ -112,7 +110,6 @@
                     x.hidden = true
                 }
             }
-
 
 
             function showpass() {
@@ -127,17 +124,7 @@
                 }
             }
 
-
-
-
-
-
-
-
-
         </script>
-
-
         <script th:src="@{/js/RegistrationFieldsValidations.js}"></script>
     </body>
 </html>
