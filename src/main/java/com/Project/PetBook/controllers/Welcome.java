@@ -31,9 +31,7 @@ public class Welcome {
 
     @Autowired
     UtilMethods myMethods;
-
-    private PasswordEncoder passwordEncoder;
-    
+   
     @GetMapping("/login")
     public String login(ModelMap mm) {
         mm.addAttribute("passwordResetDto", new PasswordForgotDto());
