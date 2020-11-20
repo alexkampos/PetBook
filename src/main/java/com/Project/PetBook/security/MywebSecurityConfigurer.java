@@ -1,4 +1,3 @@
-
 package com.Project.PetBook.security;
 
 import java.util.Arrays;
@@ -15,12 +14,18 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import com.Project.PetBook.Services.MyUserService;
+import javax.sql.DataSource;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 @EnableWebSecurity
 public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private MyUserService myUserService;
+    
+    @Autowired
+    private DataSource dataSource;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -31,20 +36,34 @@ public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
                 .antMatchers("/admin").hasRole("ADMIN")
-                .antMatchers("/user").hasAnyRole("USER")
-                .antMatchers("/vet").hasAnyRole("VET")
+                .antMatchers("/user").hasRole("USER")
+                .antMatchers("/vet").hasRole("VET")
+                .antMatchers("/home").hasAnyRole("USER", "ADMIN", "VET")
                 .antMatchers("/").permitAll()
                 .antMatchers("/home").permitAll()
                 .and()
-                .formLogin()
+                    .formLogin()
                     .loginPage("/login")
                     .successForwardUrl("/home")
                     .failureUrl("/login-error")
                     .permitAll()
                 .and()
-                .logout()
-                .permitAll();
+                    .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/login")
+                    .permitAll()
+                .and()
+                .rememberMe()
+                .tokenRepository(persistentTokenRepository())
+                .userDetailsService(myUserService);
 
+    }
+    
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository(){
+        JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+        tokenRepository.setDataSource(dataSource);
+        return tokenRepository;
     }
 
     @Bean
@@ -60,7 +79,7 @@ public class MywebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
         return new BCryptPasswordEncoder();
     }
-    
+
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

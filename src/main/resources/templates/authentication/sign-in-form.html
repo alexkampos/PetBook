@@ -38,9 +38,14 @@
                                        name="password" />
                             </div>
                         </div>
+                        
 
                         <div th:if="${loginError}" class="alert alert-danger wrong-input">
                             <span>Wrong username or password!</span>
+                        </div>
+                        
+                        <div>
+                            <input type="checkbox" name="remember-me"/> Remember me
                         </div>
 
                         <a th:href="@{/forgot-password}" class="forgot-password">Forgot password?</a>
