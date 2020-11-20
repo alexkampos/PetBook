@@ -102,13 +102,14 @@ form > p{
     color:red;
 
 }
-#myImage{
-
-    margin-top: 382px;
-    width: 410px;
-
+#dogies{
+    position: absolute;
+    margin-top: 330px;   width: 410px;
     z-index: 3;
-    margin-left: 80px;
+    margin-left: 200px;
+
+
+
 
 }
 #myImage2{
@@ -121,19 +122,17 @@ form > p{
     margin-top: 140px;
     margin-right: 420px;
     margin-left: 590px;
-    
- 
+
+
 
 
 }
-#myImage3{
-    /*
-    */    width: 170px;/*
-    */  margin-bottom: 630px;
-    margin-left: 100px;
-    margin-right: 430px;
-    z-index: 3;
-    position: relative;
+#monkey{
+
+    width: 170px;
+    z-index: 5;
+    margin-bottom: 520px;
+
 }
 
 #myImage4{
@@ -143,7 +142,7 @@ form > p{
 
     margin-bottom: 390px;
     margin-left: 130px;
-    
+
 
 
 
