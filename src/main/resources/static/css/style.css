@@ -1,50 +1,78 @@
-
 body{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgb(191, 216, 233) 0%,  rgb(108, 182, 252) 100%);
+    background-image: linear-gradient(to right, #bbd1f5, #90bafd);
 }
 
 .mybody{
-    height: 90vh;
+    height: 100vh;
+    padding-top: 12%;
+    overflow-x: hidden;
+}
+.register {
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 40px;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
+}
 
+#stamp {
+    width: 40px;
+    height: 40px;
 }
-.register{
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 10px;
+
+#register-header {
+    margin-left: 10px;
 }
-.myform{
-    position: absolute;
-    padding: 30px;
-    padding-top: 10px;
+
+.myform-transparent-div {
+    position: relative;
+    margin-left: auto;
+    margin-right: 30%;
     width:450px;
-    border: 1px solid black;
-    background-color: rgb(255, 255, 255);
-    z-index: 1;
-    -webkit-box-shadow: -2px -1px 15px 3px #000000; 
-    box-shadow: -2px -1px 15px 3px #000000;
-    border-radius: 10px;
-    margin-left: 130px;
-    margin-top: 70px;
 }
 
-.stamp{
+.myform {
+    position: relative;
+    margin-left: auto;
+    margin-right: 30%;
+    padding: 30px 80px;
+    padding-top: 15px;
+    width:450px;
+    background-color: rgb(255, 255, 255);
+    /* z-index: 1; */
+    -webkit-box-shadow: 0 0 10px 1px  #72727285; 
+    box-shadow: 0 0 10px 1px  #72727285;
+    border-radius: 5px;
+    animation-name: push-form;
+    animation-duration: 3s;
+    /* margin-left: 130px;
+    margin-top: 70px; */
+    /* animation-name: form-animation;
+    animation-duration: 3s; */
+}
+
+@keyframes push-form {
+    from {left: 1000px;}
+    to {left: 0;}
+}
+
+/* 
+@keyframes form-animation {
+    from {left: 1920px;}
+    to {left: 20px;}
+} */
+
+.stamp {
     z-index: 4;
     justify-content: start;
 }
 
-.center{
-    text-align: center;
-}
-.inline{
+.inline {
     display: flex;
 }
 
 i{
-
     height: 37.5px;
     padding: 0 8px;
     padding-top: 10px;
@@ -52,90 +80,133 @@ i{
 
 .form-control {
     border: 0;
-    border-bottom: 1px solid #dfe3e7;
+    border-bottom: 2px dashed #dfe3e7;
     border-radius: 0;
 }
 
-.noborder{
+input {
+    box-shadow: none !important;
+    border-color: #dfe3e7 !important;
+}
+
+.error-border {
+    border: 1px solid red !important;
+}
+
+.accepted-border {
+    border: 1px solid green !important;
+}
+
+#vet-id-input {
+    border-bottom: 0;
+    transition: none;
+    padding-left: 5px;
+    cursor: context-menu;
+}
+
+footer {
+    background-color: rgba(8, 8, 31, 0.589);
+}
+
+.footer-copyright {
+    color: white;
+}
+
+.noborder {
     border: 0;
 }
 input:invalid {
-    border-bottom: 2px dashed rgb(255, 228, 228);
+    border-bottom: 2px dashed #dfe3e7;
 }
 
-input:invalid:required {
-
-}
-#usernameError{
-    font-size: small;
-    color: red;
-    margin-left: 50px;
-}
-
-#emailerror{
-    font-size: small;
-    color: red;
-    margin-left: 50px;
-}
-
-#passworderror{
-    font-size: small;
-    color: red;
-    margin-left: 50px;
-}
-
-#passworderror2{
-    font-size: small;
-    color: red;
-    margin-left: 50px;
-}
-
-#showpass{
+#showpass {
     opacity: 0.3;
 }
 
-form > p{
+form > p {
     color: black;
 }
 
-.invalid-feedback{
+.invalid-feedback {
     color:red;
 
 }
-#dogies{
-    position: absolute;
-    margin-top: 330px;   width: 410px;
-    z-index: 3;
-    margin-left: 200px;
 
-
-
-
+#submitbtn {
+    margin-bottom: 10px;
+    border-radius: 0;
+    border: 0;
 }
-#myImage2{
 
+#elephant {
+    position: absolute;  
+    width: 260px;
+    z-index: 10;
+    top: 230px;
+    right: 365px;
+    transform: rotate(20deg);
+}
+
+#shadow-image-for-elephant {
+    position: absolute;  
+    width: 170px;
+    z-index: 9;
+    top: 456px;
+    right: 420px;
+    height: 50px;
+}
+
+#tiger {
+    position: absolute;  
+    width: 260px;
+    z-index: 10;
+    top: 200px;
+    left: 435px;
+}
+
+#shadow-image-for-tiger {
+    position: absolute;  
+    width: 190px;
+    height: 40px;
+    z-index: 9;
+    top: 460px;
+    right: -170px;
+    opacity: 0.8;
+}
+#shadow-image-for-tiger-tail {
+    position: absolute;  
+    width: 170px;
+    height: 20px;
+    z-index: 9;
+    top: 470px;
+    right: -250px;
+    opacity: 0.6;
+}
+
+#myImage2 {
     width: 475px;
-
-
     padding-left: 100px;
-
     margin-top: 140px;
     margin-right: 420px;
     margin-left: 590px;
-
-
-
-
-}
-#monkey{
-
-    width: 170px;
-    z-index: 5;
-    margin-bottom: 520px;
-
 }
 
-#myImage4{
+#monkey {
+    position: absolute;
+    width: 600px;
+    left: 57%;
+    z-index: 10;
+    top: -255px;
+    animation-name: monkey-image;
+    animation-duration: 2s;
+}
+
+@keyframes monkey-image {
+    from {top: -500px;}
+    to {top: -255px;}
+}
+
+#myImage4 {
 
     width: 110px;
     z-index: 3;
@@ -143,10 +214,22 @@ form > p{
     margin-bottom: 390px;
     margin-left: 130px;
 
-
-
-
-
 }
 
+.error-input {
+    position: absolute;
+    top: 40px;
+    left: -10px;
+    z-index: 5;
+    font-size: 14px;
+    color: red;
+    margin-left: 50px;
+}
 
+.input-group {
+    padding-bottom: 25px;
+}
+
+#vet-checkbox input {
+    cursor: pointer;
+}

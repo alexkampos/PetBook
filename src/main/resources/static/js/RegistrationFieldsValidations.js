@@ -1,5 +1,4 @@
-
-var usernameError = " ";
+let usernameError = " ";
 let emailError = " ";
 let passwordError = " ";
 let passwordError2 = " ";
@@ -7,22 +6,22 @@ let passwordError2 = " ";
 let submitbtn = document.getElementById("submitbtn");
 
 
-function  validName() {
-    var letters = /^[a-zA-Z\s]*$/;
-    var username = document.getElementById("username").value.trim();
+function  checkIfValidName() {
+    let letters = /^[a-zA-Z\s]*$/;
+    let username = document.getElementById("username").value.trim();
     usernameError = "";
-    let displayusernameError = document.getElementById("usernameError");
+    let displayUsernameError = document.getElementById("usernameError");
 
 
 
     if (username.length < 3 || username.length > 20) {
-        usernameError = "Name must be between 3-20 letters";
+        usernameError = "Name should be between 3-20 letters";
     }
     if (username === null || username.trim() === "") {
-        usernameError = "this field cannot be empty";
+        usernameError = "This field is required";
     }
     if (!username.match(letters)) {
-        usernameError = "this field should only contain letters";
+        usernameError = "This field should only contain letters";
     }
     if (usernameError.length === 0) {
         $.ajax({
@@ -31,18 +30,18 @@ function  validName() {
         }).done(function (r) {
 
             if (r) {
-                $("#username").css("border", "1px solid green");
+                $("#username").addClass("accepted-border");
 
             } else {
-                $("#username").css("border", "1px solid red");
-                usernameError = "User Name already Exists";
-                displayusernameError.innerText = usernameError;
+                $("#username").addClass("error-border");
+                usernameError = "Username already exists";
+                displayUsernameError.innerText = usernameError;
             }
         });
     }
 
     if (usernameError.length !== 0) {
-        $("#username").css("border", "1px solid red");
+        $("#username").addClass("error-border");
         $('#nameCheck').attr("hidden", true);
 
     } else {
@@ -50,31 +49,31 @@ function  validName() {
     }
 
 
-    displayusernameError.innerText = usernameError;
+    displayUsernameError.innerText = usernameError;
 
 
 
 }
 
-function  validEmail() {
-    var email = document.getElementById("email").value.trim();
+function  checkIfValidEmail() {
+    let email = document.getElementById("email").value.trim();
     emailError = "";
-    let displayemailerror = document.getElementById("emailerror");
+    let displayEmailError = document.getElementById("emailerror");
 
 
 
     if (email === null || email === "") {
-        emailError = "this field cannot be empty";
+        emailError = "This field cannot be empty";
     } else
     if (email.length < 4 || username.length > 20 || email.includes(" ")) {
-        emailError = "invalid email";
+        emailError = "Invalid email format";
     } else
 
     if (!email.includes('@')) {
-        emailError = "invalid email";
+        emailError = "Invalid email format";
     }
     if (emailError.length !== 0) {
-        $("#email").css("border", "1px solid red");
+        $("#email").addClass("error-border");
     }
 
     if (emailError.length === 0) {
@@ -85,15 +84,15 @@ function  validEmail() {
         }).done(function (r) {
 
             if (r) {
-                $("#email").css("border", "1px solid green");
+                $("#email").addClass("accepted-border");
             } else {
-                $("#email").css("border", "1px solid red");
-                emailError = "Email Already in use";
-                displayemailerror.innerText = emailError;
+                $("#email").addClass("error-border");
+                emailError = "Email already in use";
+                displayEmailError.innerText = emailError;
             }
         });
     }
-    displayemailerror.innerText = emailError;
+    displayEmailError.innerText = emailError;
 
     if (emailError.length === 0) {
         $('#mailCheck').attr("hidden", false);
@@ -102,79 +101,79 @@ function  validEmail() {
     }
 }
 
-function validPass1() {
+function checkIfValidPassword() {
 
     let password = document.getElementById("password").value;
     passwordError = "";
-    let displaypassworderror = document.getElementById("passworderror");
+    let displayPasswordError = document.getElementById("passworderror");
 
 
     if (password.length < 6) {
-        passwordError = "password should be  6 or more characters"
-        $("#password").css("border", "1px solid red");
+        passwordError = "Password should be 6 or more characters"
+        $("#password").addClass("error-border");
 
     }
 
     if (password === null || password === "") {
-        passwordError = "this field cannot be empty";
-        $("#password").css("border", "1px solid red");
+        passwordError = "This field cannot be empty";
+        $("#password").addClass("error-border");
     }
 
-    displaypassworderror.innerText = passwordError;
+    displayPasswordError.innerText = passwordError;
     if (passwordError.length === 0) {
-        $("#password").css("border", "1px solid green");
+        $("#password").addClass("accepted-border");
 
         validPass2();
     } else {
         $('#passCheck').attr("hidden", true);
-        $("#password2").css("border", "1px solid red");
+        $("#password2").addClass("error-border");
     }
 }
 
-function  validPass2() {
-    let displaypassworderror2 = document.getElementById("passworderror2");
+function  checkIfValidRetypePassword() {
+    let displayPasswordError2 = document.getElementById("passworderror2");
     let password2 = document.getElementById("password2").value;
     let password = document.getElementById("password").value;
     passwordError2 = "";
 
 
     if (password2 !== password) {
-        passwordError2 = "no matching password please retype"
+        passwordError2 = "Password fields don't match"
     }
 
-    displaypassworderror2.innerText = passwordError2;
+    displayPasswordError2.innerText = passwordError2;
     if (passwordError2.length === 0) {
-        $("#password2").css("border", "1px solid green");
+        $("#password2").addClass("accepted-border");
         $('#passCheck').attr("hidden", false);
     } else {
-        $("#password2").css("border", "1px solid red");
+        $("#password2").addClass("error-border");
         $('#passCheck').attr("hidden", true);
     }
 
     if (passwordError.length !== 0 || password.length < 6) {
-        $("#password2").css("border", "1px solid red");
+        $("#password2").addClass("error-border");
         $('#passCheck').attr("hidden", true);
     }
 
 }
 
 
-function validcheck(type) {
+function checkIfInputsValid(type) {
 
     switch (type) {
         case 1:
-            validName();
+            checkIfValidName();
 
             break;
         case 2:
-            validEmail();
+            checkIfValidEmail();
             break;
         case 3:
-            validPass1();
+            checkIfValidPassword();
 
             break;
         case 4:
-            validPass2();
+            checkIfValidRetypePassword();
 
             break;
         default:
@@ -188,3 +187,4 @@ function validcheck(type) {
         submitbtn.setAttribute("disabled", true);
     }
 }
+
