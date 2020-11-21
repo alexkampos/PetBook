@@ -86,29 +86,8 @@
                 </div>
                  <p th:if="${#fields.errors('userPassword')}" th:errors="*{userPassword}"  class="alert alert-danger wrong-input">pass errors Error</p> 
 
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <img src="images/vet-dog.png" width="35px"/>
-                            <div class="input-group-text noborder" id="vet-checkbox">
-                                <input th:field="*{vet}" type="checkbox" onclick="onChangeHandler()"
-                                       aria-label="Checkbox for following text input"/>
-                            </div>
-                        </div>
-                        <input id="vet-id-input" type="text" placeholder="Create a Vet account" class="form-control"
-                               th:field="*{credentialNumber}"  aria-label="Text input with checkbox" readonly="true"/>
 
-                    </div>
-                    <p th:if="${#fields.errors('credentialNumber')}" th:errors="*{credentialNumber}"  class="alert alert-danger wrong-input">pass errors Error</p>
 
-                    
-                    <div class="center">
-                        <button type="submit" id="submitbtn" class=" btn btn-primary" >Submit</button>
-                        <!--                        disabled="true"-->
-                    </div>
-                </form>
-            </div>
-            <!--
-              <img id="monkey" src="images/Daco_68032.png" />-->
 
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -184,5 +163,3 @@
 </body>
 
 </html>
-
-

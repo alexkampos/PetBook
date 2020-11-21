@@ -189,4 +189,3 @@ function checkIfInputsValid(type) {
     }
 }
 
->>>>>>> master
