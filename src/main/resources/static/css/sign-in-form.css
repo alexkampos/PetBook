@@ -5,6 +5,7 @@
 body{
     min-height: 100vh;
     background-image: linear-gradient(to right, #bbd1f5, #90bafd);
+    overflow-x: hidden;
 }
 
 .my-container {
@@ -74,6 +75,15 @@ i {
     padding-top: 10px;
 }
 
+#brand-name-span {
+    margin-left: 10px;
+}
+
+#stamp {
+    width: 40px;
+    height: 40px;
+}
+
 .username-icon {
     margin-top: 1px;
 }
@@ -84,7 +94,7 @@ i {
 
 .form-control {
     border: 0;
-    border-bottom: 1px solid #dfe3e7;
+    border-bottom: 2px dashed #dfe3e7;
     border-radius: 0;
 }
 
@@ -95,7 +105,7 @@ i {
 .login-button {
     margin-top: 20px;
     border-radius: 0;
-    background-color: #79c3ff;
+    background-color: #64abe6;
     border: 0;
 }
 
@@ -252,6 +262,16 @@ footer {
 
 .footer-copyright {
     color: white;
+}
+
+.error-input {
+    position: absolute;
+    top: 40px;
+    left: -10px;
+    z-index: 5;
+    font-size: 14px;
+    color: red;
+    margin-left: 50px;
 }
 
 .msgDisplay{
