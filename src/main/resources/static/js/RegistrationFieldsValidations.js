@@ -34,6 +34,8 @@ function  checkIfValidName() {
                 $("#username").addClass("accepted-border");
 
             } else {
+
+                $("#username").removeClass("accepted-border")
                 $("#username").addClass("error-border");
                 usernameError = "Username already exists";
                 displayUsernameError.innerText = usernameError;
@@ -66,7 +68,7 @@ function  checkIfValidEmail() {
     if (email === null || email === "") {
         emailError = "This field cannot be empty";
     } else
-    if (email.length < 4 || username.length > 20 || email.includes(" ")) {
+    if (email.length < 4 || email.length > 20 || email.includes(" ")) {
         emailError = "Invalid email format";
     } else
 
@@ -75,6 +77,8 @@ function  checkIfValidEmail() {
     }
     if (emailError.length !== 0) {
         $("#email").addClass("error-border");
+        $("#email").removeClass("accepted-border")
+       
     }
 
     if (emailError.length === 0) {
@@ -88,6 +92,7 @@ function  checkIfValidEmail() {
                 $("#email").addClass("accepted-border");
             } else {
                 $("#email").addClass("error-border");
+                 $("#email").removeClass("accepted-border");
                 emailError = "Email already in use";
                 displayEmailError.innerText = emailError;
             }
@@ -124,7 +129,7 @@ function checkIfValidPassword() {
     if (passwordError.length === 0) {
         $("#password").addClass("accepted-border");
 
-        validPass2();
+      checkIfValidRetypePassword();
     } else {
         $('#passCheck').attr("hidden", true);
         $("#password2").addClass("error-border");

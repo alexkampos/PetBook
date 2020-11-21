@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @FieldsMatch(firstParameter = "confirmPassword", secondParameter = "userPassword",message="Password doesn't match")
-@Credential(vet = "vet", credential = "credentialNumber",message="Invalid Credential Id")
+@Credential(vet = "vet", credential = "credentialNumber",message="Invalid Credential number")
 public class RegisterDto {
 
 
