@@ -1,16 +1,18 @@
 package com.Project.PetBook.Dto;
 
+import com.Project.PetBook.constraints.Credential;
+import com.Project.PetBook.constraints.FieldsMatch;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-
+@FieldsMatch(firstParameter = "confirmPassword", secondParameter = "userPassword",message="Password doesn't match")
+@Credential(vet = "vet", credential = "credentialNumber",message="Invalid Credential Id")
 public class RegisterDto {
 
-    @NotBlank(message = "User Name cannot be empty")
-    @Size(min = 3, max = 20, message = "User Name should be between 3-20 letters")
-    @Pattern(regexp = "^([ A-Za-z]+\\s)*[ A-Za-z]+$", message = "Username should contain only letters")
+
+    @Pattern(regexp = "^[a-zA-Z](_(?!(\\.|_))|\\.(?!(_|\\.))|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$", message = "Username  must be at least 3 characters  and start with a letter")
     private String userName;
 
     @NotBlank(message = "Email cannot be empty")
@@ -19,21 +21,51 @@ public class RegisterDto {
     private String email;
 
     @NotBlank(message = "Password cannot be empty")
-    @Size(min = 3, max = 20, message = "Password should be between 3-20 letters")
+    @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", message = "Password must be at least 8 characters "
+              + "and have at least one upper case letter (A-Z), one lower case letter (a-z), one digit (0-9) and one special character (#?!@$%^&-)!")
     private String userPassword;
 
     @NotBlank(message = "Password cannot be empty")
-    @Size(min = 3, max = 20, message = "Password should be between 3-20 letters")
-    private String userPassword1;
+    private String confirmPassword;
+
+    private boolean vet;
+
+
+    private String credentialNumber;
 
     public RegisterDto() {
     }
 
-    public RegisterDto(String userName, String email, String userPassword, String userPassword1) {
+    public RegisterDto(String userName, String email, String userPassword, String confirmPassword) {
         this.userName = userName;
         this.email = email;
         this.userPassword = userPassword;
-        this.userPassword1 = userPassword1;
+        this.confirmPassword = confirmPassword;
+    }
+
+    public RegisterDto(String userName, String email, String userPassword, String confirmPassword, boolean vet, String credentialNumber) {
+        this.userName = userName;
+        this.email = email;
+        this.userPassword = userPassword;
+        this.confirmPassword = confirmPassword;
+        this.vet = vet;
+        this.credentialNumber = credentialNumber;
+    }
+
+    public boolean isVet() {
+        return vet;
+    }
+
+    public void setVet(boolean vet) {
+        this.vet = vet;
+    }
+
+    public String getCredentialNumber() {
+        return credentialNumber;
+    }
+
+    public void setCredentialNumber(String credentialNumber) {
+        this.credentialNumber = credentialNumber;
     }
 
     public String getUserName() {
@@ -60,12 +92,12 @@ public class RegisterDto {
         this.userPassword = userPassword;
     }
 
-    public String getUserPassword1() {
-        return userPassword1;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public void setUserPassword1(String userPassword1) {
-        this.userPassword1 = userPassword1;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
 }

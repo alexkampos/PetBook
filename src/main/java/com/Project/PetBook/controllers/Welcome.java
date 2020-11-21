@@ -53,22 +53,25 @@ public class Welcome {
         return "home/home";
     }
 
-    @GetMapping("/registerUser")
+     @GetMapping("/registerUser")
     public String showForm(RegisterDto registerDto) {
 
         return "registration/register";
-    }    
+    }  
 
     @PostMapping("/registerUser")
     public String submitForm(@Valid RegisterDto registerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes, ModelMap mm) {
+        
 
        // // // Back end Validation // // // 
         if (bindingResult.hasErrors()) {
+            
+            
             return "registration/register";
         }
 
        // // // Check if User name or Email already exists // // // 
-        if (myUserServiceInterface.checkIfUserNameNotExists(registerDto.getUserName()) && myUserServiceInterface.checkIfEmailNotExists(registerDto.getEmail())) {
+        if (!myUserServiceInterface.checkIfUserNameExists(registerDto.getUserName()) && !myUserServiceInterface.checkIfEmailExists(registerDto.getEmail())) {
 
             
             MyUser myUser = myMethods.convertDtoUserToMyUser(registerDto);

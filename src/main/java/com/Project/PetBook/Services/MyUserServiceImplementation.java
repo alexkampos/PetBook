@@ -180,15 +180,15 @@ public class MyUserServiceImplementation implements MyUserService {
     }
 
     @Override
-    public boolean checkIfUserNameNotExists(String username) {
+    public boolean checkIfUserNameExists(String username) {
 
-        return myUserRepo.findByUserName(username) == null;
+        return myUserRepo.findByUserName(username) != null;
     }
 
     @Override
-    public boolean checkIfEmailNotExists(String email) {
+    public boolean checkIfEmailExists(String email) {
 
-        return myUserRepo.findByEmail(email) == null;
+        return myUserRepo.findByEmail(email) != null;
     }
 
     @Override
