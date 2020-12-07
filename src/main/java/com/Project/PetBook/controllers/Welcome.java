@@ -30,23 +30,22 @@ public class Welcome {
 
     @Autowired
     UtilMethods myMethods;
-   
-    @GetMapping("/login")
+
+    @GetMapping("/")
     public String login(ModelMap mm) {
         mm.addAttribute("passwordResetDto", new PasswordForgotDto());
         return "authentication/sign-in-form";
-    }    
-        
-    @GetMapping("/")
-    public String welcome() {
-        return "home/welcome";
     }
 
+//    @GetMapping("/")
+//    public String welcome() {
+//        return "home/welcome";
+//    }
     @GetMapping("/home")
     public String showHomeFromGet() {
         return "home/home";
     }
-    
+
     @PostMapping("/home")
     public String showHomeFromPost() {
         return "home/home";
@@ -61,34 +60,32 @@ public class Welcome {
     public String showForm(RegisterDto registerDto) {
 
         return "registration/register";
-    }    
+    }
 
     @PostMapping("/registerUser")
     public String submitForm(@Valid RegisterDto registerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes, ModelMap mm) {
 
-       // // // Back end Validation // // // 
+        // // // Back end Validation // // // 
         if (bindingResult.hasErrors()) {
+
             return "registration/register";
         }
 
-       // // // Check if User name or Email already exists // // // 
-        if (myUserServiceInterface.checkIfUserNameNotExists(registerDto.getUserName()) && myUserServiceInterface.checkIfEmailNotExists(registerDto.getEmail())) {
+        // // // Check if User name or Email already exists // // // 
+        if (!myUserServiceInterface.checkIfUserNameExists(registerDto.getUserName()) && !myUserServiceInterface.checkIfEmailExists(registerDto.getEmail())) {
 
-            
             MyUser myUser = myMethods.convertDtoUserToMyUser(registerDto);
 
             myUserServiceInterface.register(myUser);
 
             mm.addAttribute("msg", "Confirmation email Has been send to your email!!");
 
-            
-            return "authentication/sign-in-form";
+            return "/succes-email-sent";
         } else {
             mm.addAttribute("msg", "Something Went Wrong :(");
             return "authentication/sign-in-form";
         }
     }
-    
 
     @GetMapping("/activation")
     public String activation(@RequestParam("token") String token, Model model) {
@@ -96,9 +93,9 @@ public class Welcome {
         VerificationToken verificationToken = tokenInterface.findToken(token);
 
         if (verificationToken == null) {
-            
+
             model.addAttribute("message", "your verification token is invalid");
-            
+
         } else {
 
             String message = myUserServiceInterface.verifyUser(verificationToken);
@@ -109,11 +106,11 @@ public class Welcome {
         return "authentication/sign-in-form";
     }
 
-    
-    
     @RequestMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
         return "authentication/sign-in-form";
     }
+
+
 }
