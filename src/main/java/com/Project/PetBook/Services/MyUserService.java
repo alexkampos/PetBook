@@ -3,13 +3,14 @@ package com.Project.PetBook.Services;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Models.VerificationToken;
 import java.util.List;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface MyUserService extends UserDetailsService {
 
     public MyUser insertUser(MyUser user);
 
-    public List<MyUser> getSuggestedFriends();
+    public List<MyUser> getSuggestedFriends(Pageable pageable);
 
     public MyUser getUserByUsername(String userName);
 

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+              crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" media="all" href="css/home-page.css" th:href="@{/css/home-page.css}" />
+        <title>Home</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+
+            <a class="navbar-brand" href="#">
+                <img src="images/petbook-logo.png" width="100" height="35" alt="petbook logo" />
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pet News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vets</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div class="my-container">
+
+            <!-- SUGGESTED FRIENDS -->
+
+            <div class="home-page-left-side-container">
+                <div id="suggested-friends">
+                    <header id="suggested-friends-header">
+                        Connect with Pet Lovers
+                    </header>
+                    <div id="suggested-friends-profiles">
+                    </div>
+                    <!--                <div class="suggested-user-block border-bottom-gray">
+                                        <img src="images/mini-tiger.png" height="50px" />
+                                        <span class="suggested-friend-name"></span>
+                                        <button>
+                                            <img src="images/plus-icon.png"/>
+                                        </button>
+                                    </div>
+                                    <div class="suggested-user-block border-bottom-gray">
+                                        <img src="images/mini-tiger.png" height="50px" />
+                                        <span class="suggested-friend-name"></span>
+                                        <button>
+                                            <img src="images/plus-icon.png"/>
+                                        </button>
+                                    </div>
+                                    <div class="suggested-user-block">
+                                        <img src="images/mini-tiger.png" height="50px" />
+                                        <span class="suggested-friend-name"></span>
+                                        <button>
+                                            <img src="images/plus-icon.png"/>
+                                        </button>
+                                    </div>-->
+                    <div id="show-more-suggested-friends">
+                        <button onclick='showMoreSuggestedFriends()'>Show more</button>
+                    </div>
+                </div>
+                <a th:href="@{/logout}">Logout</a>
+            </div>
+
+            <!-- POSTS -->
+
+            <div style="background-color: yellow;" class="home-page-posts-container">
+                <div class="post-container">
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            let j = 0;
+
+            function fetchSuggestedFriends() {
+
+                $.ajax({
+                    url: "requests/suggested-friends?page=" + j++
+                }).done(response => {
+                    let i = 0;
+                    response.forEach(() => {
+                        $('#suggested-friends-profiles').append('<div class="suggested-user-block">' +
+                                '<img src="images/mini-tiger.png" height="50px" />' +
+                                '<span class="suggested-friend-name">' + response[i].userName + '</span>' +
+                                '<button>' +
+                                '<img src="images/plus-icon.png"/>' +
+                                '</button>' +
+                                '</div>');
+                        i++;
+                    });
+
+                });
+            }
+
+            function showMoreSuggestedFriendsButtonHandler(isSuggestedFriendsListEmpty) {
+                isSuggestedFriendsListEmpty ?
+                $('#show-more-suggested-friends button').addClass("not-displayed") :
+                $('#show-more-suggested-friends button').removeClass("not-displayed");
+            }
+
+            async function checkIfSuggestedFriendsListEmpty() {
+
+                return $.ajax({
+                    url: "requests/check-suggested-friends-results?page=" + j
+                });
+            }
+
+            async function onDocumentReadySuggestedFriendsHandler(){
+                let suggestedFriendsListAsyncResponse = await checkIfSuggestedFriendsListEmpty();
+                if (suggestedFriendsListAsyncResponse){
+                $('#suggested-friends').append('<div>' +
+                        'No suggestions at the moment' +
+                        '</div>');
+                } else{
+                fetchSuggestedFriends();
+                let suggestedFriendsListAsyncResponse = await checkIfSuggestedFriendsListEmpty();
+                showMoreSuggestedFriendsButtonHandler(suggestedFriendsListAsyncResponse);
+                }
+            }
+
+            async function showMoreSuggestedFriends() {
+                fetchSuggestedFriends();
+                let suggestedFriendsListAsyncResponse = await checkIfSuggestedFriendsListEmpty();
+                showMoreSuggestedFriendsButtonHandler(suggestedFriendsListAsyncResponse);
+            }
+
+            $(document).ready(() => {
+                onDocumentReadySuggestedFriendsHandler();
+            });
+
+
+
+        </script>
+
+    </body>
+
+</html>

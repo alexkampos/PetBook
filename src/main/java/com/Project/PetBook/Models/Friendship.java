@@ -1,6 +1,7 @@
 
 package com.Project.PetBook.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -37,9 +38,11 @@ public class Friendship implements Serializable {
     private Date datetimeEstablished;
     @JoinColumn(name = "friend_one", referencedColumnName = "user_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private MyUser friendOne;
     @JoinColumn(name = "friend_two", referencedColumnName = "user_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private MyUser friendTwo;
 
     public Friendship() {
