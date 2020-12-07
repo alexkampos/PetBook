@@ -9,7 +9,6 @@ import com.Project.PetBook.Services.VerificationTokenInterface;
 import com.Project.PetBook.Utils.UtilMethods;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -51,6 +50,11 @@ public class Welcome {
     @PostMapping("/home")
     public String showHomeFromPost() {
         return "home/home";
+    }
+    
+    @GetMapping("home-page")
+    public String showHomePage(){
+        return "home/home-page";
     }
 
     @GetMapping("/registerUser")

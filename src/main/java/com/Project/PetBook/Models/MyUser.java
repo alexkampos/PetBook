@@ -66,9 +66,11 @@ public class MyUser implements Serializable {
     private Collection<FriendRequest> friendReceivedRequestsCollection;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendOne", fetch = FetchType.LAZY)
+    @JsonBackReference
     private Collection<Friendship> friendshipsCollectionColumnFriendOne;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendTwo", fetch = FetchType.LAZY)
+    @JsonBackReference
     private Collection<Friendship> friendshipsCollectionColumnFriendTwo;
 
     public MyUser() {

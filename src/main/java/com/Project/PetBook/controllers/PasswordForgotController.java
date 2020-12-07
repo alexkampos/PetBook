@@ -5,7 +5,6 @@ import com.Project.PetBook.Dto.PasswordForgotDto;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Models.PasswordResetToken;
 import com.Project.PetBook.Pojos.Mail;
-import com.Project.PetBook.Repos.PasswordResetTokenRepo;
 import com.Project.PetBook.Services.EmailService;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;

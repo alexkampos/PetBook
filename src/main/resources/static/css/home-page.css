@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+body {
+    min-height: 100vh;
+}
+
+.my-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.home-page-posts-container {
+    flex-grow: 1;
+}
+
+.suggested-user-block {
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.suggested-user-block span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.suggested-user-block button {
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    position: relative;
+    /* border: 0; */
+}
+
+.suggested-user-block button img {
+    position: absolute;
+    height: 40px;
+    top: -6px;
+    left: -7px;
+    border-radius: 50%;
+}
+
+#suggested-friends {
+    border: 2px solid rgba(138, 133, 133, 0.075);
+    box-shadow: 0 0 10px 1px  #7272724b;
+    margin: 20px;
+}
+
+#suggested-friends-profiles {
+    max-height: 210px;
+    overflow: auto;
+}
+
+#suggested-friends-header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #d0daeb;
+    font-size: large;
+    color: #2b2f36;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#show-more-suggested-friends {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#show-more-suggested-friends button {
+    color: blue;
+    border: 2px solid blue;
+    width: 100%;
+    background-color: white;
+    outline: none;
+}
+
+
+
+/* POSTS SECTION */
+
+.post-container {
+    height: 300px;
+    border: 1px solid black;
+}
+
+
+/* CUSTOM BOOTSTRAP-LIKE CLASSES */
+
+.border-bottom-gray {
+    border-bottom: 1px solid rgba(138, 133, 133, 0.267) ;
+}
+
+.not-displayed {
+    display: none;
+}
