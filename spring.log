@@ -9553,3 +9553,885 @@ AND u.user_id != ? limit ?, ?
 2020-12-07 19:46:49.056 DEBUG 17108 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler ["classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/", "/"]
 2020-12-07 19:46:49.060 DEBUG 17108 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2020-12-07 19:46:49.065 DEBUG 17108 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-12-07 19:54:55.144  INFO 4948 --- [restartedMain] com.Project.PetBook.PetBookApplication   : Starting PetBookApplication on DESKTOP-0JV321P with PID 4948 (C:\Users\alkiv\Desktop\PetBook\PetBook\target\classes started by Alkis in C:\Users\alkiv\Desktop\PetBook\PetBook)
+2020-12-07 19:54:55.144  INFO 4948 --- [restartedMain] com.Project.PetBook.PetBookApplication   : No active profile set, falling back to default profiles: default
+2020-12-07 19:54:55.544  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-07 19:54:55.548  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-12-07 19:54:55.572  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendRequestRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:54:55.576  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendRequestStatusRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:54:55.580  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendshipRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:54:55.584  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.MyUserRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:54:55.588  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.PasswordResetTokenRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:54:55.588  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.RoleRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:54:55.592  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.VerificationTokenRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:54:55.592  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44ms. Found 0 JDBC repository interfaces.
+2020-12-07 19:54:55.596  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-07 19:54:55.600  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-07 19:54:55.644  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 7 JPA repository interfaces.
+2020-12-07 19:54:55.892  INFO 4948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-07 19:54:55.892  INFO 4948 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 19:54:55.896  INFO 4948 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-07 19:54:55.984  INFO 4948 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-12-07 19:54:55.988  INFO 4948 --- [restartedMain] o.a.c.c.C.[.[localhost].[/PetBook]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 19:54:55.988  INFO 4948 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 840 ms
+2020-12-07 19:54:56.080  INFO 4948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 19:54:56.136  WARN 4948 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-07 19:54:56.212  WARN 4948 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-07 19:54:56.312  INFO 4948 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-12-07 19:54:56.504  INFO 4948 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a5434d4, org.springframework.security.web.context.SecurityContextPersistenceFilter@43b0f4d2, org.springframework.security.web.header.HeaderWriterFilter@14a2f0c9, org.springframework.web.filter.CorsFilter@6a12bfc4, org.springframework.security.web.authentication.logout.LogoutFilter@77115385, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@766b1f4d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2364fff7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20c367ea, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@139e9baa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@442d54bc, org.springframework.security.web.session.SessionManagementFilter@722c27ee, org.springframework.security.web.access.ExceptionTranslationFilter@3c0b97e4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10c2109a]
+2020-12-07 19:54:56.580 DEBUG 4948 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-12-07 19:54:56.596 DEBUG 4948 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 23 mappings in 'requestMappingHandlerMapping'
+2020-12-07 19:54:56.613 DEBUG 4948 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-12-07 19:54:56.621 DEBUG 4948 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-12-07 19:54:57.893 ERROR 4948 --- [task-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_241]
+
+2020-12-07 19:54:57.893  INFO 4948 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-12-07 19:54:58.901 ERROR 4948 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:106) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:76) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_241]
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_241]
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464) ~[na:1.8.0_241]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:78) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:144) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.Project.PetBook.PetBookApplication.main(PetBookApplication.java:10) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+
+2020-12-07 19:54:58.901  INFO 4948 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-12-07 19:54:58.901  WARN 4948 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcConverter' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcConverter' parameter 4; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+2020-12-07 19:54:58.901  INFO 4948 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-07 19:54:59.913 ERROR 4948 --- [task-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:67) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.getTables(InformationExtractorJdbcDatabaseMetaDataImpl.java:333) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:120) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:65) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_241]
+
+2020-12-07 19:54:59.913 ERROR 4948 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'alexandros'@'localhost' (using password: YES)
+2020-12-07 19:54:59.917  WARN 4948 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2020-12-07 19:54:59.917  INFO 4948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-07 19:54:59.921  INFO 4948 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-12-07 19:54:59.937  INFO 4948 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-07 19:54:59.941 ERROR 4948 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcConverter' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcConverter' parameter 4; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.Project.PetBook.PetBookApplication.main(PetBookApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 39 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:106) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:76) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_241]
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_241]
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464) ~[na:1.8.0_241]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:78) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:144) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 40 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 59 common frames omitted
+
+2020-12-07 19:55:01.485  INFO 4948 --- [restartedMain] com.Project.PetBook.PetBookApplication   : Starting PetBookApplication on DESKTOP-0JV321P with PID 4948 (C:\Users\alkiv\Desktop\PetBook\PetBook\target\classes started by Alkis in C:\Users\alkiv\Desktop\PetBook\PetBook)
+2020-12-07 19:55:01.485  INFO 4948 --- [restartedMain] com.Project.PetBook.PetBookApplication   : No active profile set, falling back to default profiles: default
+2020-12-07 19:55:01.959  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-07 19:55:01.959  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-12-07 19:55:01.976  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendRequestRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:01.980  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendRequestStatusRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:01.980  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendshipRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:01.984  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.MyUserRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:01.988  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.PasswordResetTokenRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:01.988  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.RoleRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:01.992  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.VerificationTokenRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:01.992  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 0 JDBC repository interfaces.
+2020-12-07 19:55:01.996  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-07 19:55:01.996  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-07 19:55:02.027  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 7 JPA repository interfaces.
+2020-12-07 19:55:02.212  INFO 4948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-07 19:55:02.216  INFO 4948 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 19:55:02.216  INFO 4948 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-07 19:55:02.270  INFO 4948 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-12-07 19:55:02.270  INFO 4948 --- [restartedMain] o.a.c.c.C.[.[localhost].[/PetBook]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 19:55:02.270  INFO 4948 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 781 ms
+2020-12-07 19:55:02.324  INFO 4948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 19:55:02.346  INFO 4948 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-12-07 19:55:02.370  WARN 4948 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-07 19:55:02.424  WARN 4948 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-07 19:55:02.484  INFO 4948 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b9c5fcd, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dd1741d, org.springframework.security.web.header.HeaderWriterFilter@768c5d6e, org.springframework.security.web.authentication.logout.LogoutFilter@56364193, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@191bd12d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ca8f905, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@685bacd3, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7e8db0e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fef8738, org.springframework.security.web.session.SessionManagementFilter@405d0fe7, org.springframework.security.web.access.ExceptionTranslationFilter@c2db6b4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2626483e]
+2020-12-07 19:55:02.524 DEBUG 4948 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-12-07 19:55:02.536 DEBUG 4948 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 26 mappings in 'requestMappingHandlerMapping'
+2020-12-07 19:55:02.548 DEBUG 4948 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-12-07 19:55:02.556 DEBUG 4948 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-12-07 19:55:03.361 ERROR 4948 --- [task-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_241]
+
+2020-12-07 19:55:03.361  INFO 4948 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-12-07 19:55:04.369 ERROR 4948 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:106) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:76) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_241]
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_241]
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464) ~[na:1.8.0_241]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:78) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:144) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.Project.PetBook.PetBookApplication.main(PetBookApplication.java:14) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+
+2020-12-07 19:55:04.369  INFO 4948 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-12-07 19:55:04.372  WARN 4948 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcConverter' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcConverter' parameter 4; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+2020-12-07 19:55:04.372  INFO 4948 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-07 19:55:05.385 ERROR 4948 --- [task-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:67) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.getTables(InformationExtractorJdbcDatabaseMetaDataImpl.java:333) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:120) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:65) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_241]
+
+2020-12-07 19:55:05.385 ERROR 4948 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'alexandros'@'localhost' (using password: YES)
+2020-12-07 19:55:05.388  WARN 4948 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2020-12-07 19:55:05.388  INFO 4948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-07 19:55:05.392  INFO 4948 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-12-07 19:55:05.420  INFO 4948 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-07 19:55:05.428 ERROR 4948 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcConverter' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcConverter' parameter 4; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.Project.PetBook.PetBookApplication.main(PetBookApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 39 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:106) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:76) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_241]
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_241]
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464) ~[na:1.8.0_241]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:78) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:144) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 40 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 59 common frames omitted
+
+2020-12-07 19:55:20.363  INFO 4948 --- [restartedMain] com.Project.PetBook.PetBookApplication   : Starting PetBookApplication on DESKTOP-0JV321P with PID 4948 (C:\Users\alkiv\Desktop\PetBook\PetBook\target\classes started by Alkis in C:\Users\alkiv\Desktop\PetBook\PetBook)
+2020-12-07 19:55:20.363  INFO 4948 --- [restartedMain] com.Project.PetBook.PetBookApplication   : No active profile set, falling back to default profiles: default
+2020-12-07 19:55:20.771  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-07 19:55:20.771  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-12-07 19:55:20.795  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendRequestRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:20.803  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendRequestStatusRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:20.803  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.FriendshipRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:20.807  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.MyUserRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:20.807  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.PasswordResetTokenRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:20.811  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.RoleRepo. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:20.815  INFO 4948 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.Project.PetBook.Repos.VerificationTokenRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-12-07 19:55:20.815  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 0 JDBC repository interfaces.
+2020-12-07 19:55:20.819  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-07 19:55:20.819  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-07 19:55:20.883  INFO 4948 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 7 JPA repository interfaces.
+2020-12-07 19:55:21.179  INFO 4948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-07 19:55:21.179  INFO 4948 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 19:55:21.179  INFO 4948 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-12-07 19:55:21.259  INFO 4948 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-12-07 19:55:21.259  INFO 4948 --- [restartedMain] o.a.c.c.C.[.[localhost].[/PetBook]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 19:55:21.259  INFO 4948 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 892 ms
+2020-12-07 19:55:21.307  INFO 4948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 19:55:21.343  INFO 4948 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-12-07 19:55:21.439  WARN 4948 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-07 19:55:21.495  WARN 4948 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-07 19:55:21.559  INFO 4948 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31c35ca7, org.springframework.security.web.context.SecurityContextPersistenceFilter@3dfc2d52, org.springframework.security.web.header.HeaderWriterFilter@18741b83, org.springframework.security.web.authentication.logout.LogoutFilter@6d177a2a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@39640bd3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ed772c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36c7c892, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5a05c267, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3437a92e, org.springframework.security.web.session.SessionManagementFilter@67bc1430, org.springframework.security.web.access.ExceptionTranslationFilter@4cdfe8e5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25a40aa3]
+2020-12-07 19:55:21.599 DEBUG 4948 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-12-07 19:55:21.614 DEBUG 4948 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 26 mappings in 'requestMappingHandlerMapping'
+2020-12-07 19:55:21.628 DEBUG 4948 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-12-07 19:55:21.636 DEBUG 4948 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-12-07 19:55:22.441 ERROR 4948 --- [task-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_241]
+
+2020-12-07 19:55:22.441  INFO 4948 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-12-07 19:55:23.447 ERROR 4948 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324) [spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:106) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:76) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_241]
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_241]
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464) ~[na:1.8.0_241]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:78) [spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:144) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.Project.PetBook.PetBookApplication.main(PetBookApplication.java:14) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+
+2020-12-07 19:55:23.447  WARN 4948 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcConverter' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcConverter' parameter 4; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+2020-12-07 19:55:23.447  INFO 4948 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-07 19:55:23.447  INFO 4948 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-12-07 19:55:24.456 ERROR 4948 --- [task-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:67) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.getTables(InformationExtractorJdbcDatabaseMetaDataImpl.java:333) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:120) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:65) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) [hibernate-core-5.4.21.Final.jar:5.4.21.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) [spring-orm-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_241]
+
+2020-12-07 19:55:24.456 ERROR 4948 --- [task-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'alexandros'@'localhost' (using password: YES)
+2020-12-07 19:55:24.456  WARN 4948 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2020-12-07 19:55:24.456  INFO 4948 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-07 19:55:24.456  INFO 4948 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-12-07 19:55:24.464  INFO 4948 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-07 19:55:24.464 ERROR 4948 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcConverter' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcConverter' parameter 4; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.Project.PetBook.PetBookApplication.main(PetBookApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception; nested exception is org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 39 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:106) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:76) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_241]
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_241]
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152) ~[na:1.8.0_241]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_241]
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464) ~[na:1.8.0_241]
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:78) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:144) ~[spring-data-jdbc-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 40 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'alexandros'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:197) ~[mysql-connector-java-8.0.21.jar:8.0.21]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.5.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 59 common frames omitted
+
