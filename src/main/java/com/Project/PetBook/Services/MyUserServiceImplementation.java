@@ -7,6 +7,9 @@ import com.Project.PetBook.Models.VerificationToken;
 import com.Project.PetBook.Repos.MyUserRepo;
 import com.Project.PetBook.Repos.RoleRepo;
 import com.Project.PetBook.Utils.UtilMethods;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @Transactional
@@ -48,10 +52,6 @@ public class MyUserServiceImplementation implements MyUserService {
     @Autowired
     private RoleRepo roleRepo;
 
-    
-    
-    
-    
     // // // // Spring Security // // // //
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
@@ -101,10 +101,9 @@ public class MyUserServiceImplementation implements MyUserService {
         return myUserRepo.getOne(id);
     }
 
-    
     @Override
     public List<MyUser> getFriendList() {
-        
+
         List<Friendship> friendshipList = friendshipService.getFriendshipList(utilMethods.getLoggedInUser());
         List<MyUser> friendList = new ArrayList<>();
         friendshipList.forEach((fs) -> {
@@ -116,8 +115,6 @@ public class MyUserServiceImplementation implements MyUserService {
         });
         return friendList;
     }
-    
-    
 
     @Override
     public MyUser register(MyUser myUser) {
@@ -143,36 +140,31 @@ public class MyUserServiceImplementation implements MyUserService {
         return insertUser(myUser);
     }
 
-    
-    
     @Override
     public String verifyUser(VerificationToken verificationToken) {
         MyUser myUser = verificationToken.getMyUser();
         if (!myUser.isEnabled()) {
 
-           // // // Get the current timestamp // // //
+            // // // Get the current timestamp // // //
             Timestamp currentTimeStamp = new Timestamp(System.currentTimeMillis());
             if (verificationToken.getExpiryDate().before(currentTimeStamp)) {
                 return "your verification token is expired";
             } else {
                 // // // Activate Acount // // //
                 myUser.setEnabled(true);
-                
-               //  // // Set Role User // // //
+
+                //  // // Set Role User // // //
                 Role userRole = roleRepo.findById(1).orElse(null);
                 List<Role> roles = new ArrayList();
                 roles.add(userRole);
                 myUser.setRoles(roles);
 
-               // // // Update User // // //
+                // // // Update User // // //
                 insertUser(myUser);
 
                 return "Your acount is Now Activated";
-                
-                // To DO Remove Token 
-                
-                
 
+                // To DO Remove Token 
             }
         } else {
             //the user is already activated
@@ -202,7 +194,14 @@ public class MyUserServiceImplementation implements MyUserService {
     public void updatePassword(String password, Integer userId) {
         myUserRepo.updatePassword(password, userId);
     }
-    
-    
+
+    @Override
+    public void saveProfileImage(MultipartFile file) throws Exception {
+
+        String folder = "/photos/";
+        byte[] bytes = file.getBytes();
+        Path path = Paths.get(folder + file.getOriginalFilename());
+        Files.write(path, bytes);
+    }
 
 }

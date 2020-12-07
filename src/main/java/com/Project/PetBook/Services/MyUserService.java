@@ -5,6 +5,7 @@ import com.Project.PetBook.Models.VerificationToken;
 import java.util.List;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface MyUserService extends UserDetailsService {
 
@@ -29,4 +30,6 @@ public interface MyUserService extends UserDetailsService {
     public boolean checkIfUserNameExists(String username);
 
     public boolean checkIfEmailExists(String email);
+
+    public void saveProfileImage(MultipartFile file) throws Exception;
 }

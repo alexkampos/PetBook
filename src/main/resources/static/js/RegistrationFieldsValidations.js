@@ -53,7 +53,7 @@ function  checkIfValidName() {
             async: false
         }).done(function (r) {
 
-            if (r) {
+            if (!r) {
                 $("#username").addClass("accepted-border");
 
             } else {
@@ -112,7 +112,7 @@ function  checkIfValidEmail() {
             async: false
         }).done(function (r) {
 
-            if (r) {
+            if (!r) {
                 $("#email").addClass("accepted-border");
             } else {
                 $("#email").addClass("error-border");

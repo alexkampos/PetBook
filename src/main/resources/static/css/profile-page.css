@@ -1,0 +1,25 @@
+.profile-image{
+   
+    width : 160px;
+    height:160px;
+    padding: 10px;
+    border-radius: 50%;
+    border: 6px solid red;
+}
+
+.profile-image-update{
+
+    position: absolute;
+    width : 30px;
+    height:30px;
+
+    top:98px;
+    left:135px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    cursor: pointer;
+
+}
+.image-div{
+     position: relative;
+}
