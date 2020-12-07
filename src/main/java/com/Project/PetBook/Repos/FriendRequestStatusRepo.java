@@ -10,4 +10,5 @@ public interface FriendRequestStatusRepo extends JpaRepository<FriendRequestStat
     
     public FriendRequestStatus findByStatusName (String statusName);
     
+    
 }

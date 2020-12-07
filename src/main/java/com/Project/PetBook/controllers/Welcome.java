@@ -108,5 +108,10 @@ public class Welcome {
         return "authentication/sign-in-form";
     }
 
+    @RequestMapping("/mypage")
+    public String mypage() {
+
+        return "/succes-email-sent";
+    }
 
 }
