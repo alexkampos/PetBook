@@ -3,6 +3,7 @@ package com.Project.PetBook.Models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -51,6 +52,9 @@ public class MyUser implements Serializable {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ProfileImage_id")
     private Image profileImage;
+    
+    @OneToMany(mappedBy = "myUser")
+    private List<Image> usersImages;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userId")
     private ContactInfo contactInfo;
@@ -88,6 +92,17 @@ public class MyUser implements Serializable {
         this.userName = userName;
         this.userPassword = userPassword;
     }
+
+    public List<Image> getUsersImages() {
+        return usersImages;
+    }
+
+    public void setUsersImages(List<Image> usersImages) {
+        this.usersImages = usersImages;
+    }
+    
+    
+    
 
     public Image getProfileImage() {
         return profileImage;
