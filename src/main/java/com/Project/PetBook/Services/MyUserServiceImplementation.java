@@ -1,23 +1,35 @@
 package com.Project.PetBook.Services;
 
 import com.Project.PetBook.Models.Friendship;
+import com.Project.PetBook.Models.Image;
 import com.Project.PetBook.Models.Role;
 import com.Project.PetBook.Models.MyUser;
 import com.Project.PetBook.Models.VerificationToken;
+import com.Project.PetBook.Repos.ImageRepo;
 import com.Project.PetBook.Repos.MyUserRepo;
 import com.Project.PetBook.Repos.RoleRepo;
 import com.Project.PetBook.Utils.UtilMethods;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
+import javax.imageio.ImageIO;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -25,11 +37,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @Transactional
 public class MyUserServiceImplementation implements MyUserService {
+
+    @Value("${images.upload.dir}")
+    public String uploadDir;
 
     @Autowired
     private MyUserRepo myUserRepo;
@@ -51,6 +67,9 @@ public class MyUserServiceImplementation implements MyUserService {
 
     @Autowired
     private RoleRepo roleRepo;
+
+    @Autowired
+    private ImageRepo imageRepo;
 
     // // // // Spring Security // // // //
     @Override
@@ -198,10 +217,36 @@ public class MyUserServiceImplementation implements MyUserService {
     @Override
     public void saveProfileImage(MultipartFile file) throws Exception {
 
-        String folder = "/photos/";
-        byte[] bytes = file.getBytes();
-        Path path = Paths.get(folder + file.getOriginalFilename());
-        Files.write(path, bytes);
+        String folder = uploadDir;
+
+        byte[] image = file.getBytes();
+
+        //creating a new random name for the photo
+        Random r = new Random();
+
+        String extension = StringUtils.getFilenameExtension(file.getOriginalFilename());
+
+        String newPhotoName = "profileImg" + utilMethods.getLoggedInUser().getUserName() + r.nextInt() + "." + extension;
+
+        Path path = Paths.get(folder + newPhotoName);
+
+        Files.write(path, image);
+
+        //saving the photo
+        if (image == null) {
+
+        }
+        Date date = new Date();
+
+        Image profileImage = new Image(newPhotoName, date, utilMethods.getLoggedInUser());
+
+        Image insertedImage  = imageRepo.save(profileImage);
+             
+         utilMethods.getLoggedInUser().setProfileImage(insertedImage);
+       
+         myUserRepo.save(utilMethods.getLoggedInUser());
+         
+       
     }
 
 }

@@ -34,7 +34,6 @@ public class MyUser implements Serializable {
     @Column(name = "user_id")
     private Integer userId;
 
-
     @Basic(optional = false)
     @Column(name = "user_name")
     private String userName;
@@ -48,6 +47,10 @@ public class MyUser implements Serializable {
     private String email;
 
     private boolean enabled;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ProfileImage_id")
+    private Image profileImage;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userId")
     private ContactInfo contactInfo;
@@ -64,11 +67,11 @@ public class MyUser implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "receiverId", fetch = FetchType.LAZY)
     @JsonBackReference
     private Collection<FriendRequest> friendReceivedRequestsCollection;
-    
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendOne", fetch = FetchType.LAZY)
     @JsonBackReference
     private Collection<Friendship> friendshipsCollectionColumnFriendOne;
-    
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendTwo", fetch = FetchType.LAZY)
     @JsonBackReference
     private Collection<Friendship> friendshipsCollectionColumnFriendTwo;
@@ -84,6 +87,14 @@ public class MyUser implements Serializable {
         this.userId = userId;
         this.userName = userName;
         this.userPassword = userPassword;
+    }
+
+    public Image getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(Image profileImage) {
+        this.profileImage = profileImage;
     }
 
     public boolean isEnabled() {
@@ -177,7 +188,7 @@ public class MyUser implements Serializable {
     public void setFriendshipsCollectionColumnFriendTwo(Collection<Friendship> friendshipsCollectionColumnFriendTwo) {
         this.friendshipsCollectionColumnFriendTwo = friendshipsCollectionColumnFriendTwo;
     }
-    
+
     @Override
     public String toString() {
         return "com.Project.PetBook.Models.Users[ userId=" + userId + " ]";

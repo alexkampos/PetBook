@@ -1,25 +1,34 @@
 .profile-image{
-   
+
     width : 160px;
     height:160px;
     padding: 10px;
     border-radius: 50%;
-    border: 6px solid red;
+    border: 6px solid whitesmoke;
 }
 
 .profile-image-update{
 
     position: absolute;
+    text-align: center;
     width : 30px;
     height:30px;
-
-    top:98px;
+    top:107px;
     left:135px;
+    border:1px solid black;
+    vertical-align: middle;
     border-radius: 50%;
-    border: 1px solid blue;
     cursor: pointer;
 
 }
 .image-div{
-     position: relative;
+    position: relative;
+}
+
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+    display: none;
 }
