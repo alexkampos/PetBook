@@ -29,7 +29,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+*.jpg
+
 ### VS Code ###
 .vscode/
-
-/src/main/resources/static/photos
