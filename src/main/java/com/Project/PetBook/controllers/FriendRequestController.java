@@ -1,5 +1,6 @@
 package com.Project.PetBook.controllers;
 
+import com.Project.PetBook.Models.FriendRequest;
 import com.Project.PetBook.Models.MyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,9 +41,10 @@ public class FriendRequestController {
     }
 
     @GetMapping("/received-friend-requests")
-    public String showReceivedFriendRequests(ModelMap mm) {
-        mm.addAttribute("receivedFriendRequests", requestInterface.getTheReceivedFriendRequests());
-        return "friends/received-friend-requests";
+    @ResponseBody
+    public List<FriendRequest> showReceivedFriendRequests(ModelMap mm) {
+//        mm.addAttribute("receivedFriendRequests", requestInterface.getTheReceivedFriendRequests());
+        return  requestInterface.getTheReceivedFriendRequests();
     }
     
     @GetMapping("asd")
@@ -68,7 +70,9 @@ public class FriendRequestController {
     @GetMapping("/addFriend/{id}")
     @ResponseBody
     public ResponseEntity sendFriendRequest(@PathVariable int id) {
+        
         requestInterface.sendRequest(id);
+        
         return new ResponseEntity(HttpStatus.OK);
     }
 

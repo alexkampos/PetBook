@@ -9,18 +9,21 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"  crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <title>Profie Page</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        
+
         <nav th:replace="layouts :: foo"></nav>
-        
+
         <div class="container">
-            
-            
-            <img src=""  alt="#" th:attr="src=@{'/photos/' + ${MyUser.profileImage.imagePath} }  " class="profile-image" />
+
+
+            <img src=""  alt="#" th:attr="src=@{'/photos/' + ${MyUser?.profileImage?.imagePath} }  " class="profile-image" />
+
+
             <div class=" profile-image-update" data-toggle="modal" data-target="#myModal" >
                 <i class="fa fa-camera "></i>
             </div>
@@ -31,7 +34,7 @@
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link"  href="#"   data-toggle="modal" data-target=".bs-example-modal-lg">Photos</a>
-                           
+
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Friends</a>
@@ -39,9 +42,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pet</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="#"  id="friendrequest"  data-toggle="modal" data-target="#friendrequestmodal">friend</a>
+
+                        </li>
                     </ul>
                 </div>
             </nav>
+
 
 
 
@@ -54,12 +62,12 @@
                             <div class="carousel-inner">
 
                                 <div class="carousel-item active">
-                                    <img class="card-img-top"  src=""  alt="#" th:attr="src=@{'/photos/' + ${MyUser.profileImage.imagePath} }  " />
+                                    <img class="card-img-top"  src=""  alt="#" th:attr="src=@{'/photos/' + ${MyUser?.profileImage?.imagePath} }  " />
                                 </div>
 
 
                                 <div th:each="image : ${userImages}" class="carousel-item" >
-                                    <img src=""  alt="#" th:attr="src=@{'/photos/' + ${image.imagePath} }  " class="card-img-top"  />
+                                    <img src=""  alt="No Images " th:attr="src=@{'/photos/' + ${image.imagePath} }  " class="card-img-top"  />
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -102,5 +110,81 @@
 
             </div>
         </div>
+
+
+
+        <!-- TABLE MODAL -->
+        <div id="friendrequestmodal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h4 class="modal-title">Friend requests</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="friend-requests">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <script>
+            function  acceptRequest(event) {
+                $.ajax({
+                    url: "/PetBook/requests/requestAccepted/" + event.target.id
+                }).done(function () {
+                    event.target.innerText = "ACCEPTED";
+                    event.target.disabled = true;
+//                    location.reload();
+                });
+            }
+
+            $(document).ready(function () {
+
+
+
+//                $("#asdf").on('click', function (e) {
+//
+
+//                });
+
+
+                $.ajax({
+                    url: "/PetBook/requests/received-friend-requests"
+//                   
+                }).done(function (r) {
+                    for (i = 0; i < r.length; i++) {
+                        $('#friend-requests').append('<tr><td>' + r[i].senderId.userName + '</td> <td>' + r[i].statusId.statusName + '</td>  \n\
+                    <td><button onclick="acceptRequest(event)"  name="accept" id="' + r[i].senderId.userId + '">Accept</button></td></tr>'
+                                );
+                    }
+
+                });
+
+            });
+
+
+
+        </script>
+
     </body>
 </html>

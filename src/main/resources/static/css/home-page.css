@@ -21,6 +21,7 @@ body {
     padding: 10px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .suggested-user-block span {
@@ -99,4 +100,8 @@ body {
 
 .not-displayed {
     display: none;
+}
+
+.visit-profile-link{
+    margin: 0 70px;
 }

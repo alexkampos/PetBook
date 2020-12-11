@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
 
 @Controller
 public class UserController {
@@ -20,7 +20,6 @@ public class UserController {
     @Autowired
     private UtilMethods utilMethods;
 
-    
     @GetMapping("profile-page")
     public String getProfilePage(Model model) {
 
@@ -30,7 +29,6 @@ public class UserController {
         return "profile/profile-page";
     }
 
-    
     @PostMapping("/upload-profile-image")
     public String uploadImage(@RequestParam("file") MultipartFile file) {
 
@@ -39,11 +37,16 @@ public class UserController {
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        
 
         return "redirect:/home-page";
     }
 
+    @GetMapping("visit-profile/{userName}")
+    public String visitProfile(@PathVariable("userName") String userName, Model model) {
 
+        model.addAttribute("MyUser", myUserService.getUserByUsername(userName));
+
+        return "profile/profile-visitor";
+    }
 
 }

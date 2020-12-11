@@ -17,7 +17,7 @@
     <body>
 
         <nav th:replace="layouts :: foo"></nav>
-        
+
         <div class="my-container">
 
             <!-- SUGGESTED FRIENDS -->
@@ -77,9 +77,13 @@
                 }).done(response => {
                     let i = 0;
                     response.forEach(() => {
+                        var imageUrl = "photos/" + response[i].profileImage.imagePath;
+                        var profileUrl = "visit-profile/"+response[i].userName;
+
                         $('#suggested-friends-profiles').append('<div class="suggested-user-block">' +
-                                '<img src="images/mini-tiger.png" height="50px" />' +
-                                '<span class="suggested-friend-name">' + response[i].userName + '</span>' +
+                                '<img src=' + imageUrl + ' height="50px" />' +
+//                                '<span class="suggested-friend-name"  onclick="checkUserProfile(event)" >' + response[i].userName + '</span>' +
+                                 '<a class="visit-profile-link"  href= '+profileUrl+'>'+response[i].userName+'</a>'+
                                 '<button>' +
                                 '<img src="images/plus-icon.png"/>' +
                                 '</button>' +
@@ -89,11 +93,17 @@
 
                 });
             }
+            function  checkUserProfile(event) {
+//                console.log(event.target.innerHTML);
+//                return $.ajax({
+//                    url: "home"
+//                });
+            }
 
             function showMoreSuggestedFriendsButtonHandler(isSuggestedFriendsListEmpty) {
                 isSuggestedFriendsListEmpty ?
-                $('#show-more-suggested-friends button').addClass("not-displayed") :
-                $('#show-more-suggested-friends button').removeClass("not-displayed");
+                        $('#show-more-suggested-friends button').addClass("not-displayed") :
+                        $('#show-more-suggested-friends button').removeClass("not-displayed");
             }
 
             async function checkIfSuggestedFriendsListEmpty() {
@@ -103,16 +113,16 @@
                 });
             }
 
-            async function onDocumentReadySuggestedFriendsHandler(){
+            async function onDocumentReadySuggestedFriendsHandler() {
                 let suggestedFriendsListAsyncResponse = await checkIfSuggestedFriendsListEmpty();
-                if (suggestedFriendsListAsyncResponse){
-                $('#suggested-friends').append('<div>' +
-                        'No suggestions at the moment' +
-                        '</div>');
-                } else{
-                fetchSuggestedFriends();
-                let suggestedFriendsListAsyncResponse = await checkIfSuggestedFriendsListEmpty();
-                showMoreSuggestedFriendsButtonHandler(suggestedFriendsListAsyncResponse);
+                if (suggestedFriendsListAsyncResponse) {
+                    $('#suggested-friends').append('<div>' +
+                            'No suggestions at the moment' +
+                            '</div>');
+                } else {
+                    fetchSuggestedFriends();
+                    let suggestedFriendsListAsyncResponse = await checkIfSuggestedFriendsListEmpty();
+                    showMoreSuggestedFriendsButtonHandler(suggestedFriendsListAsyncResponse);
                 }
             }
 

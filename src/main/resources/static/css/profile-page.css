@@ -11,13 +11,16 @@
     text-align: center;
     width : 30px;
     height:30px;
-    top:150px;
+    top:100px;
     left:350px;
     border:1px solid black;
     vertical-align: middle;
     border-radius: 50%;
     cursor: pointer;
 
+}
+.addButton{
+ 
 }
 
 

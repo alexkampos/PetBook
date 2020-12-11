@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ImageRepo extends JpaRepository<Image, Long>{
     
+
 }

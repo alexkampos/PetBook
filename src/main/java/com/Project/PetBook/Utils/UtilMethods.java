@@ -28,7 +28,6 @@ public class UtilMethods {
         myUser.setUserName(registerDto.getUserName());
         myUser.setEmail(registerDto.getEmail());
         myUser.setUserPassword(registerDto.getUserPassword());
-        System.out.println(registerDto.getUserName());
 
         return myUser;
     }

@@ -1,6 +1,7 @@
 package com.Project.PetBook.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -49,11 +50,12 @@ public class MyUser implements Serializable {
 
     private boolean enabled;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name = "ProfileImage_id")
     private Image profileImage;
-    
+
     @OneToMany(mappedBy = "myUser")
+   
     private List<Image> usersImages;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userId")
@@ -100,9 +102,6 @@ public class MyUser implements Serializable {
     public void setUsersImages(List<Image> usersImages) {
         this.usersImages = usersImages;
     }
-    
-    
-    
 
     public Image getProfileImage() {
         return profileImage;

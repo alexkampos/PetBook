@@ -28,10 +28,13 @@ public interface MyUserRepo extends JpaRepository<MyUser, Integer> {
             + "AND u.user_id != ?1",
             nativeQuery = true
     )
+    
+    
     public List<MyUser> findSuggestedFriends(int userId, Pageable pageable);
     
     @Modifying
     @Query(value = "UPDATE USERS u SET u.user_password = ?1 WHERE u.user_id = ?2",
             nativeQuery = true)
+           
     void updatePassword(String password, Integer id);
 }

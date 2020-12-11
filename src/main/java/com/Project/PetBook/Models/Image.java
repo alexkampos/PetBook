@@ -1,5 +1,7 @@
 package com.Project.PetBook.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,8 +30,9 @@ public class Image {
     @Temporal(TemporalType.TIMESTAMP)
     private Date imageUploadDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private MyUser myUser;
 
     public Image() {

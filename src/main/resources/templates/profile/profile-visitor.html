@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" media="all" href="profile-page.css" th:href="@{/css/profile-page.css}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"  crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <title>Profie Page</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+
+        <nav th:replace="layouts :: foo"></nav>
+
+        <div class="container">
+
+
+            <img src=""  alt="#" th:attr="src=@{'/photos/' + ${MyUser?.profileImage?.imagePath} }  " class="profile-image" />
+
+
+
+
+
+            <h1 th:text="${MyUser.userName}" ></h1>
+            <hr/>
+            <button class="addButton" name="userId" th:id="${MyUser.userId}" >add friend</button>
+            <nav  class="navbar navbar-expand-md">
+
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link"  href="#"   data-toggle="modal" data-target=".bs-example-modal-lg">Photos</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Friends</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pet</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $("button[name = 'userId']").on('click', function (e) {
+
+                    $.ajax({
+                        url: "/PetBook/requests/addFriend/" + e.target.id
+                    }).done(function (r) {
+                        e.target.innerText = "Request sent";
+                        e.target.disabled = true;
+                    });
+                });
+            });
+        </script>
+
+
+    </body>
+</html>
